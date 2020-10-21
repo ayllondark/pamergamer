@@ -89,7 +89,8 @@ $(".nav-item").click(function() {
             if (datosOK == "OK") {
                 var datos = data.data;
                 //console.log(data.data);
-
+                   
+                var html= '';
                 $.each(datos, function(index, value) {
                     //$(".category").html(datos[index].cod); console.log(datos[index].cod);
                     var codcurso = datos[index].idcurso;
@@ -102,7 +103,7 @@ $(".nav-item").click(function() {
 
                     //$(".container").append('<div id="'+datos[index].id+'">'+prueba+'</div>');
 
-                    $("#cards").append('<div class="column" id="' + datos[index].id + '">' +
+                      html+=  '<div class="column col-xs-12 col-sm-12 col-md-4" id="' + datos[index].id + '">' +
                         '<div class="post-module">' +
                         '<div class="thumbnail">' +
                         '<img src="../img/evaonline/' + imgcurso + '"/>' +
@@ -117,7 +118,7 @@ $(".nav-item").click(function() {
                         '<div class="barralec"><span style="width: ' + (puntosobtenidos / puntajecurso) * 100 + '%"></span>' +
                         '</div>' +
                         '<p class="text-center pordesa">Obtuviste el ' + (puntosobtenidos / puntajecurso) * 100 + '% del desafío</p>' +
-                        '</div>');
+                        '</div>';
 
 
 
@@ -125,97 +126,28 @@ $(".nav-item").click(function() {
                     //$('#cmbMotivo').append('<option value="' + datos[index].id + '">' + datos[index].motivo + '</option>');
                 });
 
+                $("#cards").html(html);
                 /* ------------------------------------------------------------ */
                 $(".entrar").click(function() {
 
                     //$("#cards").html('');
-                    var tipolectura = $(this).attr('data-cod');
-                    $("#codlectura").html(tipolectura);
+                    var ccurso = $(this).attr('data-cod');
+                    //$("#codlectura").html(tipolectura);
+                    var csem = $(this).attr('data-sem');
 
-                    console.log(tipolectura);
-                    var semana = $("#semanaexamen").html();
-                    var curso = $(this).attr('data-cod');
-                    console.log("semana: " + semana);
-                    console.log("curso: " + curso);
-                    // ($("#semanaexamen").html());
-                    //alert($(this).attr('data-cod'));
-
-                    var aParam = '{"idlectura":' + tipolectura + '}';
-                    // aParam = '{"grado":"' + isNull($("#txtSolicitud").val()) + '"}';
-                    // console.log(aParam);
-                    aParam = segenNegocios(aParam);
-
-                    var datosOK = "";
-                    var strUrl = "getdatos/3";
-                    $.post(strUrl, { "objJSON": aParam }, null, "html")
-                        .done(function(data, textStatus, jqXHR) {
-                            data = segdeNegocios(data);
-                            // console.log(data);
-
-                            datosOK = data.message.toUpperCase();
-                            // console.log(datosOK);
-                            if (datosOK == "OK") {
-                                var datos = data.data;
-                                //console.log(data.data);
-
-                                BloqueoExamen();
-                                $('#perfillectura').hide();
-                                $('.mainlectura').show();
-
-                                $.each(datos, function(index, value) {
-                                    //$(".category").html(datos[index].cod); console.log(datos[index].cod);
-                                    var numlec = datos[index].id;
-                                    var fecha = datos[index].jfecha;
-                                    var nomlect = datos[index].jlectura;
-                                    var descripcion = datos[index].jdesc;
-                                    var imagen = datos[index].jimagen;
-                                    var nimagen = datos[index].jnimagen;
-
-
-                                    var result = imagen.split("|");
-                                    for (var i = 0; i < nimagen; i++) {
-                                        // console.log("SPLIT RESULT: " + result[i]);
-                                        //$("#blockedusers").append('<div id="'+i+'">'+result[i]+' sdsd</div>');
-                                        //$("#barrarepro").append('dasds');
-
-                                        $('#slider').css({ width: nimagen + '00%' });
-
-                                        $(".slider").append('<section class="slider__section"><img /* onerror="imgError(this);" */ src="../app/webroot/assets_ace/images/lectogamer/lecturas/' + result[i] + '" class="slider__img"></section>');
-                                    }
-
-                                    $("#descripcionle").append('<h2 id="titule">' + nomlect + '</h2>');
-                                    $("#descripcionle").append('<h4>' + descripcion + '</h4>');
-
-
-
-                                    //$('#cmbMotivo').append('<option value="' + datos[index].id + '">' + datos[index].motivo + '</option>');
-                                });
-
-                            } else {
-                                viewMessage("divMessage", "Alerta", data.data, "danger", "ban");
-                                $("#cards").append(data.data);
-                            }
-
-                        })
-                        .fail(function(jqXHR, textStatus, errorThrown) {
-                            viewMessage("Mensaje", "Alerta", errorThrown + " " + jqXHR + " Error al leer encuesta", "warning", "warning");
-                        })
-                        .always(function() {
-                            reLogin(datosOK);
-                        });
-
-
-                    /* ------------------------------------------------------------ */
-
-
-
-
+                    setTimeout("location.href='examenpamergamer?sem=" + csem + "&curid=" + ccurso + " '", 2000);
 
                 });
 
             } else {
                 viewMessage("divMessage", "Alerta", data.data, "danger", "ban");
-                $("#cards").append(data.data);
+                Swal.fire({
+                    icon: 'info',
+                    title: 'Oops...',
+                    text: data.data
+                  
+                  })
+                //$("#cards").append(data.data);
             }
 
         })
