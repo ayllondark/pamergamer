@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
   <meta charset="UTF-8">
   <title>Clash of Clans Cards</title>
@@ -161,221 +161,6 @@ body {
 
 
 
-.slide-container {
-  margin: auto;
-  width: 600px;
-  text-align: center;
-}
-
-.wrapper {
-  padding-top: 60px;
-  padding-bottom: 40px;
-}
-.wrapper:focus {
-  outline: 0;
-}
-
-.clash-card {
-  background: white;
-  width: 250px;
-  display: inline-block;
-  margin: auto;
-  border-radius: 19px;
-  position: relative;
-  text-align: center;
-  box-shadow: -1px 15px 30px -12px black;
-  z-index: 9999;
-}
-
-.clash-card__image {
-  position: relative;
-  height: 200px;
-  border-top-left-radius: 14px;
-  border-top-right-radius: 14px;
-}
-
-.clash-card__image--barbarian {
-  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/barbarian-bg.jpg");
-}
-.clash-card__image--barbarian img {
-  width: 200px;
-  position: absolute;
-  top: -65px;
-  left: 50px;
-}
-
-.clash-card__image--archer {
-  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/archer-bg.jpg");
-}
-.clash-card__image--archer img {
-  width: 400px;
-  position: absolute;
-  top: -34px;
-  left: -37px;
-}
-
-.clash-card__image--giant {
-  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/giant-bg.jpg");
-}
-.clash-card__image--giant img {
-  width: 340px;
-  position: absolute;
-  top: -30px;
-  left: -25px;
-}
-
-.clash-card__image--goblin {
-  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/goblin-bg.jpg");
-}
-.clash-card__image--goblin img {
-  width: 370px;
-  position: absolute;
-  top: -21px;
-  left: -37px;
-}
-
-.clash-card__image--wizard {
-  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/wizard-bg.jpg");
-}
-.clash-card__image--wizard img {
-  width: 345px;
-  position: absolute;
-  top: -28px;
-  left: -10px;
-}
-
-.clash-card__level {
-  text-transform: uppercase;
-  font-size: 12px;
-  font-weight: 700;
-  margin-bottom: 3px;
-}
-
-.clash-card__level--barbarian {
-  color: #EC9B3B;
-}
-
-.clash-card__level--archer {
-  color: #EE5487;
-}
-
-.clash-card__level--giant {
-  color: #F6901A;
-}
-
-.clash-card__level--goblin {
-  color: #82BB30;
-}
-
-.clash-card__level--wizard {
-  color: #4FACFF;
-}
-
-.clash-card__unit-name {
-  font-size: 26px;
-  color: black;
-  font-weight: 900;
-  margin-bottom: 5px;
-}
-
-.clash-card__unit-description {
-  padding: 20px;
-  margin-bottom: 10px;
-}
-
-.clash-card__unit-stats--barbarian {
-  background: #EC9B3B;
-}
-.clash-card__unit-stats--barbarian .one-third {
-  border-right: 1px solid #BD7C2F;
-}
-
-.clash-card__unit-stats--archer {
-  background: #EE5487;
-}
-.clash-card__unit-stats--archer .one-third {
-  border-right: 1px solid #D04976;
-}
-
-.clash-card__unit-stats--giant {
-  background: #F6901A;
-}
-.clash-card__unit-stats--giant .one-third {
-  border-right: 1px solid #de7b09;
-}
-
-.clash-card__unit-stats--goblin {
-  background: #82BB30;
-}
-.clash-card__unit-stats--goblin .one-third {
-  border-right: 1px solid #71a32a;
-}
-
-.clash-card__unit-stats--wizard {
-  background: #4FACFF;
-}
-.clash-card__unit-stats--wizard .one-third {
-  border-right: 1px solid #309eff;
-}
-
-.clash-card__unit-stats {
-  color: white;
-  font-weight: 700;
-  border-bottom-left-radius: 14px;
-  border-bottom-right-radius: 14px;
-}
-.clash-card__unit-stats .one-third {
-  width: 100%;
-  float: left;
-  padding: 20px 15px;
-}
-.clash-card__unit-stats sup {
-  position: absolute;
-  bottom: 4px;
-  font-size: 45%;
-  margin-left: 2px;
-}
-.clash-card__unit-stats .stat {
-  position: relative;
-  border: 1px solid #ffffff;
-  padding-top: 6px;
-  padding-bottom: 6px;
-  border-radius: 8px;
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-.clash-card__unit-stats .stat-value {
-  text-transform: uppercase;
-  font-weight: 400;
-  font-size: 12px;
-}
-.clash-card__unit-stats .no-border {
-  border-right: none;
-}
-
-.clearfix:after {
-  visibility: hidden;
-  display: block;
-  font-size: 0;
-  content: " ";
-  clear: both;
-  height: 0;
-}
-
-.slick-prev {
-  left: 100px;
-  z-index: 999;
-}
-
-.slick-next {
-  right: 100px;
-  z-index: 999;
-}
-
-#avatares{
-  margin-top: 60px;
-}
-
 /* */
 
   .skin-blue .wrapper{
@@ -386,7 +171,7 @@ body {
   
   /* Cuadro Nick */
   #nick h2{
-    letter-spacing: 2px;
+    /*letter-spacing: 2px;*/
     font-size: 3.2em;
     margin: 0;
     color: #666;
@@ -461,12 +246,122 @@ body {
     border-radius: 4px;
 }
 
+
+/* start cards */
+header {
+        width: 100%;
+        background-color: #77cdb4;
+        text-align: center;
+    }
+    
+    h1 {
+        font-family: 'Roboto Condensed', sans-serif;
+        font-size: 2.3em;
+    }
+    
+    em {
+        color: #232027;
+    }
+    
+    .wrapper {
+        width: 80%;
+        margin: 40px auto;
+    }
+    
+    div.gallery {
+        margin-top: 30px;
+        background-color: #232027;
+    }
+    
+    div.gallery ul {
+        list-style-type: none;
+        margin-left: 35px;
+    }
+    /* animation */
+    
+    div.gallery ul li,
+    div.gallery li img {
+        -webkit-transition: all 0.1s ease-in-out;
+        -moz-transition: all 0.1s ease-in-out;
+        -o-transition: all 0.1s ease-in-out;
+        transition: all 0.1s ease-in-out;
+    }
+    
+    div.gallery ul li {
+        position: relative;
+        float: left;
+        width: 130px;
+        height: 130px;
+        margin: 5px;
+        padding: 5px;
+        z-index: 0;
+    }
+    /* Make sure z-index is higher on hover */
+    /* Ensure that hover image overlapped the others */
+    
+    div.gallery ul li:hover {
+        z-index: 5;
+    }
+    /* Image is position nicely under li */
+    
+    div.gallery ul li img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        /* border: 1px solid #dddddd; */
+        padding: 5px;
+        width: 130px;
+        height: 130px;
+        background: #f0f0f0;
+    }
+    
+    div.gallery ul li img:hover {
+        width: 200px;
+        height: 200px;
+        margin-top: -130px;
+        margin-left: -130px;
+        top: 65%;
+        left: 65%;
+    }
+    
+    p.attribution {
+        font-family: 'Consolas';
+        color: #000;
+        clear: both;
+        text-align: center;
+        line-height: 25px;
+        padding-top: 30px;
+    }
+    
+    p.attribution a {
+        color: #4c8d7c;
+    }
+    /* Responsive hack */
+    
+    @media only screen and (min-width: 499px) and (max-width: 1212px) {
+        .wrapper {
+            width: 500px;
+        }
+    }
+    
+    @media only screen and (max-width: 498px) {
+        .wrapper {
+            width: 300px;
+        }
+        div.gallery ul {
+            list-style-type: none;
+            margin: 0;
+        }
+    }
+/* end cards */
+
+
 </style>
 
 <body>
 
   <header>
-    <h1><!-- Hola, Juan Manuel -->.</h1>
+
     </header>
 
 
@@ -513,6 +408,37 @@ body {
     <button id="btnRegistrar">Registrar</button>
 
 </div>
+
+<div class="container">
+
+
+        <div class="row" a>
+            <img style="margin-left: auto; margin-right: auto;display: block;" src="logo-retopamer.png" alt="">
+        </div>
+
+        <h1 style="color: #f5f5fD;" id="tituloavatar">ELIGE TU AVATAR</h1>
+
+        <div class="row">
+
+
+
+            <div class="wrapper">
+                <div class="gallery">
+                    <ul>
+                        
+                    </ul>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+
+
 
 <div id="message" style="display: none;"></div>
 

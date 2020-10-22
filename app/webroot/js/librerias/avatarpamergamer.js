@@ -15,13 +15,12 @@ $(".elboton").click(function() {
 function ListaAvatar2() {
 
     sChargeData();
-    $("#cards").html('');
-    //alert($(this).attr('data-semana'));
+    $(".gallery").html('');
+
     var sexo = $('input:radio[name=drone]:checked').val();
 
     var aParam = '{"sexo":"' + sexo + '"}';
-    // aParam = '{"grado":"' + isNull($("#txtSolicitud").val()) + '"}';
-    // console.log(aParam);
+
     aParam = segenNegocios(aParam);
 
     var datosOK = "";
@@ -32,36 +31,21 @@ function ListaAvatar2() {
             // console.log(data);
 
             datosOK = data.message.toUpperCase();
-            // console.log(datosOK);
+            console.log(datosOK);
             if (datosOK == "OK") {
                 var datos = data.data;
-                //console.log(data.data);
 
-                //$('<script>alert("hi");</' + 'script>').appendTo(document.body);
 
                 $.each(datos, function(index, value) {
                     //$(".category").html(datos[index].cod); console.log(datos[index].cod);
                     var idpersonaje = datos[index].id;
-                    var nompersonaje = datos[index].nombre;
                     var imagen = datos[index].imagen;
-                    console.log(nompersonaje);
 
-                    $(".container-avatar").append('<div class="col-lg-4 col-md-4 col-xs-12 col-centered" id="avatares">' +
-                        '<div class="clash-card barbarian">' +
-                        '<div class="clash-card__image clash-card__image--barbarian">' +
-                        '<!--<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/barbarian.png" alt="barbarian" />-->' +
-                        '<img src="../app/webroot/assets_ace/images/lectogamer/avatars/' + imagen + '" alt="barbarian" />' +
-                        '</div>' +
+                    $(".gallery").append('<li class="btnavatar" id="' + idpersonaje + '" style="position: relative; float: left; width: 130px; height: 130px; margin: 5px; padding: 5px; z-index: 0;">' +
+                        '<img style="border-radius: 1em; background-color: #363f46; width: 130px; height: 130px; padding: 5px; position: absolute; left: 0; top: 0;" src="../app/webroot/img/pamergamer/avatars/' + imagen + '">' +
+                        '</li>');
 
-                        '<div class="clash-card__unit-stats clash-card__unit-stats--barbarian clearfix">' +
-                        '<div class="one-third">' +
-                        '<button class="btn btn-sm btn-success btnavatar" id="' + idpersonaje + '"> Seleccionar</button>' +
-                        '</div>' +
 
-                        '</div>' +
-
-                        '</div>' +
-                        '</div>');
 
                 });
                 fChargeData();
@@ -71,8 +55,9 @@ function ListaAvatar2() {
                     $("#suavatar").html(suid);
                     console.log(suid);
 
-                    $(".container-avatar").hide();
+                    $(".gallery").hide();
                     $("#entrada").hide();
+                    $("#tituloavatar").hide();
                     $("#nick").show();
                     $("#regresar").show();
 
@@ -100,13 +85,13 @@ function ListaAvatar2() {
 
 $("input[name=drone]").change(function() {
     //alert($(this).val());
-    $(".container-avatar").html("");
+    $(".gallery").html("");
 });
 
 
 
 $("#regresar").click(function() {
-    $(".container-avatar").hide();
+    $(".gallery").hide();
     $("#entrada").hide();
     $("#nick").hide();
     $("#regresar").hide();
@@ -138,7 +123,7 @@ $("#btnRegistrar").click(function() {
     aParam = segenNegocios(aParam);
 
     var datosOK = "";
-    var strUrl = "mantto/2";
+    var strUrl = "mantto/1";
     $.post(strUrl, { "objJSON": aParam }, null, "html")
         .done(function(data, textStatus, jqXHR) {
             data = segdeNegocios(data);
@@ -150,7 +135,7 @@ $("#btnRegistrar").click(function() {
                 var datos = data.data;
 
                 fChargeData();
-                setTimeout("location.href='lectogamer'", 1000);
+                setTimeout("location.href='cursospamergamer'", 1000);
 
             } else {
                 fChargeData();

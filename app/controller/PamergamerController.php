@@ -115,41 +115,24 @@ class PamergamerController extends AppController {
                             $json = AppController::JSONisValid($prejson);
                             $sql = "CALL NPV_PAMERGAMER_RESULTADOS('$usuario->codigo','$json->semana','$json->curso')";
                             exit(AppController::getResult($sql));
-                    case 30:
-
-                        $prejson = $this->request->data('objJSON');
-
-                        $json = AppController::JSONisValid($prejson);
-
-                        $sql = "CALL NPV_LECTOGAMER_MOSTRAR_LECTURA('$usuario->id',$json->idlectura)";
-
-                        exit(AppController::getResult($sql));
-
-
-
+ 
                     case 4:
 
                         $prejson = $this->request->data('objJSON');
 
                         $json = AppController::JSONisValid($prejson);
 
-                        $sql = "CALL NPV_LECTOGAMER_LISTAR_PERSONAJES('$usuario->id','$json->sexo')";
+                        $sql = "CALL NPV_PAMERGAMER_LISTAR_PERSONAJES('$usuario->id','$json->sexo')";
 
                         exit(AppController::getResult($sql));
-
-
 
                     case 5:
+                            $prejson = $this->request->data('objJSON');
+                            $json = AppController::JSONisValid($prejson);
+                            $sql = "CALL NPV_PAMERGAMER_REGISTRO_AVATAR('$usuario->codigo')";
+                            exit(AppController::getResult($sql));
+                            break;
 
-                        $prejson = $this->request->data('objJSON');
-
-                        $json = AppController::JSONisValid($prejson);
-
-                        $sql = "CALL NPV_LECTOGAMER_MOSTRAR_PREGUNTAS('$usuario->id','$json->idlectura','$json->grado','$json->semana')";
-
-                        exit(AppController::getResult($sql));
-
-                        
 
                     case 6:
 
@@ -157,50 +140,17 @@ class PamergamerController extends AppController {
 
                         $json = AppController::JSONisValid($prejson);
 
-                        $sql = "CALL NPV_LECTOGAMER_MOSTRAR_GRUPO_VU('$usuario->id')";
+                        $sql = "CALL NPV_PAMERGAMER_MOSTRAR_GRADOS('$usuario->codigo')";
 
                         exit(AppController::getResult($sql));
 
 
-
-		     case 7:
-                        $prejson = $this->request->data('objJSON');
-                        $json = AppController::JSONisValid($prejson);
-                        $sql = "CALL NPV_LECTOGAMER_ADMIN_GET('$usuario->id','$json->grado','$json->semana')";
-                        exit(AppController::getResult($sql));
-
-                    case 8:
-                        $prejson = $this->request->data('objJSON');
-                        $json = AppController::JSONisValid($prejson);
-                        $sql = "CALL GET_GRUPOS_VU()";
-                        exit(AppController::getResult($sql));
-                        break;
-
-		    case 9:
-                        $prejson = $this->request->data('objJSON');
-                        $json = AppController::JSONisValid($prejson);
-                        $sql = "CALL NPV_LECTOGAMER_REGISTRO_AVATAR('$usuario->id')";
-                        exit(AppController::getResult($sql));
-                        break;
+		    
 
 		  case 10:
                         $prejson = $this->request->data('objJSON');
                         $json = AppController::JSONisValid($prejson);
                         $sql = "CALL NPV_LECTOGAMER_ULTIMO_ACCESO('$usuario->id')";
-                        exit(AppController::getResult($sql));
-                        break;
-
-		  case 11:
-                        $prejson = $this->request->data('objJSON');
-                        $json = AppController::JSONisValid($prejson);
-                        $sql = "CALL NPV_LECTOGAMER_ALU_DESTACADOS('$json->grupo')";
-                        exit(AppController::getResult($sql));
-                        break;
-
-                    case 12:
-                        $prejson = $this->request->data('objJSON');
-                        $json = AppController::JSONisValid($prejson);
-                        $sql = "CALL NPV_LECTOGAMER_BLOQUEO_EXAMEN('$usuario->id','$json->idlectura')";
                         exit(AppController::getResult($sql));
                         break;
 
@@ -265,26 +215,13 @@ class PamergamerController extends AppController {
                 switch ($op) {
 
 
-
                     case 1:
 
                         $prejson = $this->request->data('objJSON');
 
                         $json = AppController::JSONisValid($prejson);
 
-                        $sql = "CALL NPV_LECTOGAMER_REGISTRO_SET('$usuario->id','$json->aniociclo','$json->grado','$json->semana','$json->nomlectura','$json->deslectura','$json->puntaje','$json->archivo')";
-
-                        exit(AppController::getResult($sql));
-
-
-
-                    case 2:
-
-                        $prejson = $this->request->data('objJSON');
-
-                        $json = AppController::JSONisValid($prejson);
-
-                        $sql = "CALL NPV_LECTOGAMER_PERFIL_GET('$usuario->id','$json->personaje','$json->nick')";
+                        $sql = "CALL NPV_PAMERGAMER_PERFIL_GET('$usuario->codigo','$json->personaje','$json->nick')";
 
                         exit(AppController::getResult($sql));
 

@@ -133,7 +133,7 @@ $(".nav-item").click(function() {
                     //$("#codlectura").html(tipolectura);
                     var csem = $(this).attr('data-sem');
 
-                    setTimeout("location.href='examenpamergamer?sem=" + csem + "&curid=" + ccurso + " '", 2000);
+                    setTimeout("location.href='examenpamergamer?sem=" + csem + "&curid=" + ccurso + " '", 1000);
 
                 });
 
