@@ -12,7 +12,7 @@
     <style>
 
     body{
-    background: url("../img/fondopamergamer.png") no-repeat center center fixed!important;
+    background: url("../img/fondopamergamer.jpeg") no-repeat center center fixed!important;
     background-size: cover!important;
     }
 
@@ -77,8 +77,8 @@
             <div id="cursoexamen" style="display:none;"></div>
             
         <div class="row" >
-            <div class="col-xs-12 col-sm-12 col-md-1"></div>
-            <div class="col-xs-12 col-sm-12 col-md-8">
+           
+            <div class="col-xs-12 col-sm-12 col-md-9">
                  
                  <div class="row" style="padding-bottom: 20px;">
                     <div class="col-xs-12 col-sm-12 col-md-4" style="padding-bottom: 10PX;">
@@ -210,50 +210,53 @@
                     <div class="col-xs-12 col-sm-12 col-md-10" id="imagenpregunta" style="opacity: 0.9;border-radius: 1.3em;background: #104e7d; padding-bottom: 18PX;">
                         
                     </div>
-                </div>  
 
+                </div>  
+        
+               <div class="row">
+                   <div class="col-xs-12 col-sm-12 col-md-4"></div>
+                   <div class="col-xs-12 col-sm-12 col-md-5">
+
+                   <div class="row" style="padding-top: 30PX; padding-bottom: 20px;">
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <button type="button" id="btnGuardar" class="btn btn-info btn-lg btn-block" style=" font-size: 22PX;letter-spacing: 2px;
+                        font-weight: bold;    BORDER-RADIUS: 0.8EM; background-color: #337ab7;;
+                         padding-bottom: 13PX; ">FINALIZAR JUEGO</button>
+                    </div>
+                </div>
+
+                   </div>
+               </div>
+            
             </div>
             <div class="col-xs-12 col-sm-12 col-md-3">
                   
-                <div class="row" style=" text-align: center; padding-top: 70PX; padding-bottom: 10px; font-size: 35px;font-weight: bold;color: #fff373;letter-spacing: 2px;">
-                    <span  >!FELICIDADES¡</span>
+                <div class="row" style=" text-align: center; padding-top: 100PX; padding-bottom: 10px; font-size: 45px;font-weight: bold;color: #fff373;letter-spacing: 5px;">
+                    <span  >NIVEL</span>
                 </div>
                 <div class="row" style=" text-align: center; padding-bottom: 20px; padding-top:10px;color: #fff; font-weight: bold;font-size: 16px;letter-spacing: 2px;">
                     <span>SUPERASTE EL RETO PAMER</span>
                 </div>
 
-                <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-8">
-                        <div class="row" style=" text-align: center; padding-bottom: 10px; padding-top:10px;color: #fff; font-weight: bold;font-size: 16px;letter-spacing: 2px;">
-                            <span>OBTUVISTES 200 PTS</span>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-4">
-                        <div class="row" style=" text-align: center; padding-bottom: 10px; padding-top:10px;color: #fff; font-weight: bold;font-size: 16px;letter-spacing: 2px;">
-                            <span >1000/<span style="color:#8dcef4;">1500</span></span>
-                        </div>
-                    </div>
+               <div class="row">
+               <div class="col-xs-12 col-sm-12 col-md-12">
+                 <img style=" margin-left: auto; margin-right: auto; width: 150px;display: block;" class="img-responsive" src="https://www.libreriareleer.es/img/logo-libro.png" alt="..."> 
+                 <div style="text-align: center;font-size: 1.4rem;color: #fff; FONT-WEIGHT: BOLD; padding-bottom: 20px;padding-top: 20px;">LIBROS</div>
                 </div>
-                <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12">
-                        <div class="progress" style="background-color:#1a3d61;">
-                            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-                              <span class="sr-only">20% Complete</span>
-                            </div>
-                        </div>
-                    </div>               
-                </div>
+
+
+
                 <div class="row" style="padding-bottom: 20px;">
                     <div class="col-xs-4 col-sm-4 col-md-4">
-                          <div class="row" style="color: #87b3d4; font-weight: bold;font-size: 14px; text-align: right;">
+                          <div class="row" style="color: #87b3d4; font-weight: bold;font-size: 13px; text-align: right;">
                             PREGUNTAS 
                           </div>
-                          <div class="row" style="color: #87b3d4; font-weight: bold;font-size: 14px; text-align: right;">
+                          <div class="row" style="color: #87b3d4; font-weight: bold;font-size: 13px; text-align: right;">
                              CONTESTADAS
                           </div>
                     </div>
                     <div class="col-xs-4 col-sm-4 col-md-3">
-                        <div class="row" style="color: #fff373; font-weight: bold;font-size: 40px; text-align: center;">
+                        <div class="row" style="color: #fff373; font-weight: bold;font-size: 35px; text-align: center;">
                             10
                         </div>
                     </div>
@@ -275,39 +278,23 @@
                 </div>
                 
                 <div class="row">
-                    <div class="col-xs-6 col-sm-12 col-md-3" >
-                        <img style=" margin-left: auto; margin-right: auto; width: 50px;display: block;" class="img-responsive" src="https://i.pinimg.com/originals/c1/ec/da/c1ecda477bc92b6ecfc533b64d4a0337.png" alt="...">
-                        <div style="text-align: center;font-size: 1.4rem;color: #fff; FONT-WEIGHT: BOLD;">DIVINO</div>  
-                    </div>
-                    <div class="col-xs-6 col-sm-12 col-md-3">
-                        <img style=" margin-left: auto; margin-right: auto; width: 50px;display: block;" class="img-responsive" src="https://i.pinimg.com/originals/c1/ec/da/c1ecda477bc92b6ecfc533b64d4a0337.png" alt="...">
+                 
+                    <div class="col-xs-6 col-sm-12 col-md-4">
+                        <img style=" margin-left: auto; margin-right: auto; width: 100px;display: block;" class="img-responsive" src="https://i.pinimg.com/originals/c1/ec/da/c1ecda477bc92b6ecfc533b64d4a0337.png" alt="...">
                         <div style="text-align: center;font-size: 1.4rem;color: #fff; FONT-WEIGHT: BOLD;">ORO</div>
                     </div>
-                    <div class="col-xs-6 col-sm-12 col-md-3">
-                        <img style=" margin-left: auto; margin-right: auto; width: 50px;display: block;" class="img-responsive" src="https://i.pinimg.com/originals/c1/ec/da/c1ecda477bc92b6ecfc533b64d4a0337.png" alt="...">
+                    <div class="col-xs-6 col-sm-12 col-md-4">
+                        <img style=" margin-left: auto; margin-right: auto; width: 100px;display: block;" class="img-responsive" src="https://i.pinimg.com/originals/c1/ec/da/c1ecda477bc92b6ecfc533b64d4a0337.png" alt="...">
                         <div style="text-align: center;font-size: 1.4rem;color: #fff; FONT-WEIGHT: BOLD;">PLATA</div>
                     </div>
-                    <div class="col-xs-6 col-sm-12 col-md-3">
-                        <img style=" margin-left: auto; margin-right: auto; width: 50px;display: block;" class="img-responsive" src="https://i.pinimg.com/originals/c1/ec/da/c1ecda477bc92b6ecfc533b64d4a0337.png" alt="...">
+                    <div class="col-xs-6 col-sm-12 col-md-4">
+                        <img style=" margin-left: auto; margin-right: auto; width: 100px;display: block;" class="img-responsive" src="https://i.pinimg.com/originals/c1/ec/da/c1ecda477bc92b6ecfc533b64d4a0337.png" alt="...">
                         <div style="text-align: center;font-size: 1.4rem;color: #fff; FONT-WEIGHT: BOLD;">BRONCE</div>
                     </div>
                 </div>
 
-                <div class="row" style="padding-top: 30PX;">
-                    <div class="col-xs-12 col-sm-12 col-md-12">
-                        <button type="button" id="btnGuardar" class="btn btn-info btn-lg btn-block" style=" font-size: 18PX;
-                        font-weight: bold;    BORDER-RADIUS: 1EM; background-color: #1bc5ef;
-                         padding-bottom: 13PX; ">JUGAR DE NUEVO</button>
-                    </div>
-                </div>
-                 
-                <div class="row" style="padding-top: 15PX;">
-                    <div class="col-xs-12 col-sm-12 col-md-12" style="text-align: center;">
-                        <span class="glyphicon glyphicon-cloud fa-2x" aria-hidden="true" style="color: #f1e25f;"></span>
-                        <span style="text-align: center;font-size: 1rem;color: #fff;FONT-WEIGHT: BOLD;letter-spacing: 1PX; font-family: Verdana, Geneva, Tahoma, sans-serif;">
-                            DEBES ALCANZAR EL 100% PARA APROBAR</span>
-                    </div>
-                </div>
+             
+              
 
             </div>
 

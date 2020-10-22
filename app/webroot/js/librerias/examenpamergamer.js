@@ -48,7 +48,7 @@ function ListaPreguntas() {
 
                 //$('<script>alert("hi");</' + 'script>').appendTo(document.body);
 
-
+            var con= 0;
                 $.each(datos, function(index, value) {
                     //$(".category").html(datos[index].cod); console.log(datos[index].cod);
                     var nropregunta = datos[index].id;
@@ -60,57 +60,30 @@ function ListaPreguntas() {
                     var alternativa4 = datos[index].alterna4;
 
 
-
-                    /*  <div class="row">
-                              <img src="img/orlando.png" class=" img-responsive" alt="" style="padding: 20px;border-radius: 2em; width: 100%; height: 350PX;">
-                          </div>
-                            <div class="row" style=" padding-bottom: 10PX;">
-                              <div class="radio-toolbar">
-                                          <div class="col-xs-12 col-sm-12 col-md-2"></div>
-                                          <div class="col-xs-6 col-sm-6 col-md-2">                                     
-                                                  <input type="radio" id="A" name="radioFruit" value="apple" >
-                                                  <label for="A">A</label>
-                                          </div>
-                                          <div class="col-xs-6 col-sm-6 col-md-2">
-                                                 <input type="radio" id="B" name="radioFruit" value="banana">
-                                                  <label for="B">B</label>
-                                          </div>
-                                          <div class="col-xs-6 col-sm-6 col-md-2">
-                                                  <input type="radio" id="C" name="radioFruit" value="orange">
-                                                  <label for="C">C</label> 
-                                          </div>
-                                          <div class="col-xs-6 col-sm-6 col-md-2">
-                                                  <input type="radio" id="D" name="radioFruit" value="FF">
-                                                  <label for="D">D</label> 
-                                          </div>
-                                          <div class="col-xs-12 col-sm-12 col-md-2"></div>
-                                    </div>                        
-                            </div>*/
-
-
-
                     $("#imagenpregunta").append('<div class="row">' +
-                        '<img src="../img/pamergamer/preguntas/' + pregunta + '" class=" img-responsive" alt="" style="padding: 20px;border-radius: 2em; width: 100%; height: 350PX;">' +
+                 '<img src="../img/pamergamer/preguntas/' + pregunta + '" class=" img-responsive" alt="" style="padding: 20px;border-radius: 2em; width: 100%; height: 350PX;">' +
                         '</div>' +
                         '<div class="row" style=" padding-bottom: 10PX;">' +
                         '<div class="radio-toolbar">' +
                         '<div class="col-xs-12 col-sm-12 col-md-2"></div>' +
                         '<div class="col-xs-6 col-sm-6 col-md-2">' +
-                        '<input type="radio" name="color' + nropregunta + '" value="' + alternativa1 + '" /> <label style="padding-right: 35px;"> ' + alternativa1 + ' </label>' +
+                        '<input type="radio" id="'+con+'" name="color' + nropregunta + '" value="' + alternativa1 + '" /> <label for="'+con+'" style="padding-right: 35px;"> ' + alternativa1 + ' </label>' +
                         '</div>' +
                         '<div class="col-xs-6 col-sm-6 col-md-2">' +
-                        '<input type="radio" name="color' + nropregunta + '" value="' + alternativa2 + '" /> <label style="padding-right: 35px;"> ' + alternativa2 + ' </label>' +
+                        '<input type="radio" id="'+(con+1)+'" name="color' + nropregunta + '" value="' + alternativa2 + '" /> <label for="'+(con+1)+'" style="padding-right: 35px;"> ' + alternativa2 + ' </label>' +
                         '</div>' +
                         '<div class="col-xs-6 col-sm-6 col-md-2">' +
-                        '<input type="radio" name="color' + nropregunta + '" value="' + alternativa3 + '" /> <label style="padding-right: 35px;"> ' + alternativa3 + ' </label>' +
+                        '<input type="radio" id="'+(con+2)+'" name="color' + nropregunta + '" value="' + alternativa3 + '" /> <label for="'+(con+2)+'" style="padding-right: 35px;"> ' + alternativa3 + ' </label>' +
                         '</div>' +
                         '<div class="col-xs-6 col-sm-6 col-md-2">' +
-                        '<input type="radio" name="color' + nropregunta + '" value="' + alternativa4 + '" /> <label style="padding-right: 35px;"> ' + alternativa4 + ' </label>' +
+                        '<input type="radio" id="'+(con+3)+'" name="color' + nropregunta + '" value="' + alternativa4 + '" /> <label for="'+(con+3)+'" style="padding-right: 35px;"> ' + alternativa4 + ' </label>' +
                         '</div>' +
                         '</div>' +
                         '</div>');
+                            con =  con*2+4;
+                        con++;
 
-                });
+            });
 
                 $(".btnavatar").click(function() {
                     var suid = this.id;
