@@ -157,6 +157,12 @@ $("#btnGuardar").click(function() {
     var rpta2 = $('input:radio[name=color2]:checked').val();
     var rpta3 = $('input:radio[name=color3]:checked').val();
     var rpta4 = $('input:radio[name=color4]:checked').val();
+
+
+    var rcurso = $("#cursoexamen").html();
+    var rsem = $("#semanaexamen").html();
+
+
     var strUrl = "mantto/3";
 
     // $("#cuadroreq").text();
@@ -186,7 +192,7 @@ $("#btnGuardar").click(function() {
                     $("#mensageg").fadeOut(400);
                 }, 6000);
 
-                setTimeout("location.href='cursospamergamer'", 2000);
+                setTimeout("location.href='resultadospamergamer?sem=" + rsem + "&curid=" + rcurso + " '", 2000);
 
                 //$("#espaciador").show();
                 $("#txttitulo").val('');

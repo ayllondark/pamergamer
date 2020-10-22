@@ -53,7 +53,18 @@ class PamergamerController extends AppController {
         $this->set('titPage', '');
         $this->set('subTitPage', ' '.date("Y"));
         $this->set('objJS', '<!-- Css -->');
-        $this->set('piePag', '<link rel="stylesheet" href="../assets_ace/css/pamergamer.css">' . '<!-- Java -->'.'<script src="../js/librerias/examenpamergamer.js?4"></script>');
+        $this->set('piePag', '<link rel="stylesheet" href="../assets_ace/css/pamergamer.css">' . '<!-- Java -->'.'<script src="../js/librerias/examenpamergamer.js?5"></script>');
+
+    }
+
+    public function resultadospamergamer() {
+
+        AppController::isAuthorized();
+        $this->layout = 'pages';
+        $this->set('titPage', '');
+        $this->set('subTitPage', 'Lectogamer Primaria '.date("Y"));
+        $this->set('objJS', '<!-- Css -->');
+        $this->set('piePag', '<!-- Java -->'.'<script src="../js/librerias/resultadospamergamer.js?2"></script>');
 
     }
 
@@ -98,8 +109,13 @@ class PamergamerController extends AppController {
                         $json = AppController::JSONisValid($prejson);
                         $sql = "CALL NPV_PAMERGAMER_MOSTRAR_PREGUNTAS('$usuario->codigo','$json->semana','$json->curso')";
                         exit(AppController::getResult($sql));
-
+                    
                     case 3:
+                            $prejson = $this->request->data('objJSON');
+                            $json = AppController::JSONisValid($prejson);
+                            $sql = "CALL NPV_PAMERGAMER_RESULTADOS('$usuario->codigo','$json->semana','$json->curso')";
+                            exit(AppController::getResult($sql));
+                    case 30:
 
                         $prejson = $this->request->data('objJSON');
 
