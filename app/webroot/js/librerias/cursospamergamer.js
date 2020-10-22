@@ -89,7 +89,7 @@ $(".nav-item").click(function() {
             if (datosOK == "OK") {
                 var datos = data.data;
                 //console.log(data.data);
-
+               var html='';
                 $.each(datos, function(index, value) {
                     //$(".category").html(datos[index].cod); console.log(datos[index].cod);
                     var codcurso = datos[index].idcurso;
@@ -101,8 +101,8 @@ $(".nav-item").click(function() {
 
 
                     //$(".container").append('<div id="'+datos[index].id+'">'+prueba+'</div>');
-
-                    $("#cards").append('<div class="column" id="' + datos[index].id + '">' +
+  
+                    html+= '<div class="column" id="' + datos[index].id + '">' +
                         '<div class="post-module">' +
                         '<div class="thumbnail">' +
                         '<img src="../img/evaonline/' + imgcurso + '"/>' +
@@ -117,13 +117,15 @@ $(".nav-item").click(function() {
                         '<div class="barralec"><span style="width: ' + (puntosobtenidos / puntajecurso) * 100 + '%"></span>' +
                         '</div>' +
                         '<p class="text-center pordesa">Obtuviste el ' + (puntosobtenidos / puntajecurso) * 100 + '% del desafío</p>' +
-                        '</div>');
+                        '</div>';
 
 
 
 
                     //$('#cmbMotivo').append('<option value="' + datos[index].id + '">' + datos[index].motivo + '</option>');
                 });
+                $("#cards").html(html);
+
 
                 /* ------------------------------------------------------------ */
                 $(".entrar").click(function() {
@@ -138,8 +140,16 @@ $(".nav-item").click(function() {
                 });
 
             } else {
+
+                Swal.fire({
+                    icon: 'info',
+                    title: 'Oops...',
+                    text: data.data
+                    
+                  })
+
                 viewMessage("divMessage", "Alerta", data.data, "danger", "ban");
-                $("#cards").append(data.data);
+                //$("#cards").append(data.data);
             }
 
         })
