@@ -53,6 +53,7 @@ class PamergamerController extends AppController {
         $this->set('titPage', '');
         $this->set('subTitPage', ' '.date("Y"));
         $this->set('objJS', '<!-- Css -->');
+<<<<<<< HEAD
         $this->set('piePag', '<link rel="stylesheet" href="../assets_ace/css/pamergamer.css">' . '<!-- Java -->'.'<script src="../js/librerias/examenpamergamer.js?5"></script>');
 
     }
@@ -65,6 +66,9 @@ class PamergamerController extends AppController {
         $this->set('subTitPage', 'Lectogamer Primaria '.date("Y"));
         $this->set('objJS', '<!-- Css -->');
         $this->set('piePag', '<!-- Java -->'.'<script src="../js/librerias/resultadospamergamer.js?2"></script>');
+=======
+        $this->set('piePag', '<link rel="stylesheet" href="../assets_ace/css/pamergamer.css?2">' . '<!-- Java -->'.'<script src="../js/librerias/examenpamergamer.js?2"></script>');
+>>>>>>> 90040ac8b99756a4ba911233b23f2f11324df4d1
 
     }
 
@@ -296,7 +300,7 @@ class PamergamerController extends AppController {
 
                         $json = AppController::JSONisValid($prejson);
 
-                        $sql = "CALL NPV_PAMERGAMER_GRABAR_EXAMEN('$usuario->codigo','$json->curso','$json->semana','$json->preg1','$json->preg2','$json->preg3','$json->preg4')";
+                        $sql = "CALL NPV_LECTOGAMER_GRABAR_EXAMEN('$usuario->id','$json->codlectura','$json->preg1','$json->preg2','$json->preg3','$json->preg4')";
 
                         exit(AppController::getResult($sql));
 

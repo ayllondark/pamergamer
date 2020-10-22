@@ -23,7 +23,7 @@
   background: linear-gradient(to bottom, #8c7a7a 0%, #af877c 65%, #af877c 100%) fixed;
 
  /* background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/coc-background.jpg") no-repeat center center fixed!important; */
-background: url("../img/fondopamergamer.png") no-repeat center center fixed!important;
+background: url("../img/fondopamergamer.jpeg") no-repeat center center fixed!important;
 
   background-size: cover!important;
 
@@ -204,10 +204,13 @@ img {
 /* Estilos para los Tabs Lecturas */
 
 
-
+/*CAMBIOS EDGAR2020*/
 .bg-dark {
-
-    background-color: #115899!important;
+/* background-color: #115899!important; */
+background-color: #104e7d!important;
+    opacity: 0.9;
+    letter-spacing: 1px;
+    font-family: system-ui;
 
 }
 
@@ -391,13 +394,15 @@ body {
 
 .entrar{
 
+/*CAMBIO EDGAR*/
+       width: 100%; /* ADD*/
     color: #fff;
 
     background-color: #0FAFBB;
 
     font-size: 1.3rem!important;
 
-    border-color: #0FAFBB;
+  /*  border-color: #0FAFBB;*/
 
     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
 
@@ -488,6 +493,8 @@ body {
 
   overflow: hidden;
 
+  border:  0px;
+
 }
 
 .post-module .thumbnail .date {
@@ -560,13 +567,15 @@ body {
 
 }
 
+/* CAMBIOS EDGAR2020 */
 .post-module .post-content {
-
+  
   position: absolute;
 
   bottom: 0;
-
-  background: #245794;
+  FONT-FAMILY: system-ui;
+  background: #104e7d;
+  opacity: 0.9;
 
   width: 100%;
 
@@ -684,8 +693,8 @@ body {
 
 .container {
 
-  max-width: 800px;
-
+  max-width: 100%;
+  /* max-width: 800px;*/
   min-width: 640px;
 
   margin: 0 auto;
@@ -5464,6 +5473,43 @@ img[src='../app/webroot/assets_ace/images/lectogamer/lecturas/undefined'] { disp
 .escudocurso{
   
 }
+
+/* CSS  EDGAR2020 */
+/*BOTONES GRANDES*/
+.paralelogramo2 {
+    width: 300px; 
+    height: 60px; 
+    opacity: 0.9;
+    background: #104e7d;
+    -webkit-transform: skew(50deg);
+    -moz-transform: skew(50deg);
+    -ms-transform: skew(50deg);
+    -o-transform: skew(60deg);
+    transform: skew(-30deg);
+   
+    border-radius: 0.5em;
+    color: #ffffff;
+    
+    text-transform: unset;
+    display: block;
+    padding-top: 5px;
+}
+.paralelogramo2 .texto2 {
+    transform: skew(30deg);
+    padding-top: 5PX;
+   
+    padding-left: 40PX;
+    font-weight: bold;
+  
+    font-family: Vegur, 'PT Sans', Verdana, sans-serif;
+    font-size: 1.6rem;
+    display: block;
+   
+}
+
+
+
+
 </style>
 
 
@@ -5490,6 +5536,7 @@ img[src='../app/webroot/assets_ace/images/lectogamer/lecturas/undefined'] { disp
 
     </main> -->
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 
 <header>
@@ -5529,49 +5576,58 @@ img[src='../app/webroot/assets_ace/images/lectogamer/lecturas/undefined'] { disp
 <div id="codgrupo" style="display: none;">_</div>
 
 
+<div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-4" style="padding-top: 20PX;">
+                        <div class="paralelogramo2" >
+                            <div class="texto2">
+                               <div class="row">
+                                    
+                                      <div class=" col-xs-4 col-sm-4 col-md-8">
+                                            <div class="row" style="font-size: 2rem;  color: #fff;       font-weight: 600;">
+                                                NICKNAME
+                                            </div>
+                                            <div class="row" style="margin-bottom: 0.4rem; color: #f5f5f5; font-size: 1.2rem; ">
+                                                4° SEC.
+                                            </div>
+                                      </div>
+                                      <div class=" col-xs-4 col-sm-4 col-md-4">
+                                        <img width="40px" height="40px" src="https://i.pinimg.com/originals/5b/61/67/5b6167f881cbf46ae638c759f033ed36.png" alt="">
+
+                                      </div>
+                                  
+                               </div>
+                               
+                          </div>
+                    </div>
+                    </div>
+   </div>
 
 
-
-<div class="row" style="margin-top: 10%;" id="perfillectura">
+<div class="row" style="margin-top: 20PX;" id="perfillectura">
 
   <div class="col-xs-12 col-sm-3 col-md-3">
 
-      <h1 class="text-center" style="background-color: #1060a0; padding: 5px 0px 5px 0px;">CARLOS</h1>
+     
 
-      <hr>
-
-      <p class="text-center" id="nivel">Caballero - Nivel 10</p>
-        <p class="text-center" id="nick"></p>
-
-        
-
-
-
-       <!-- <div class="barra">
-
-            <span style="width: 25%"></span>
-
-        </div> -->
-
-
-
-        <p class="text-center" id="armadura"></p>
-
-        <div class="estrellas">
-            <p class="perfil"> <strong class="medallas"> ORO </strong>
-
-            <span class="detperfil" id="nota"></span></p>
-
-            <p class="perfil">PLATA 
-
-            <span class="detperfil"><img class="icoavatar" src="../app/webroot/img/pamergamer/escudo.svg" alt=""> 0</span></p>
-
-            <p class="perfil">BRONCE
-
-            <span class="detperfil" id="totmedallas"><img class="icoavatar" src="../app/webroot/img/pamergamer/escudo.svg" alt=""> 0 medallas</span> </p>
-
-            
-        </div>
+      
+      <img src="../img/pamergamer/avatar/avatar008.png" class="img-responsive" alt="Image">
+      
+      <div class="row" style=" padding-top: 33px; padding-bottom: 33px;background-color: #104e7d;border-radius: 1em;
+    font-family: sans-serif;margin-top: 33px;opacity: 0.9;">
+               
+                    <div class="col-xs-6 col-sm-12 col-md-4">
+                        <img style="padding-bottom: 10px; margin-left: auto; margin-right: auto; width: 100%;display: block;" class="img-responsive" src="https://i.pinimg.com/originals/c1/ec/da/c1ecda477bc92b6ecfc533b64d4a0337.png" alt="...">
+                        <div style="text-align: center;font-size: 1.6rem;color: #fff; FONT-WEIGHT: BOLD;">ORO</div>
+                    </div>
+                    <div class="col-xs-6 col-sm-12 col-md-4">
+                        <img style="padding-bottom: 10px; margin-left: auto; margin-right: auto; width: 100%;display: block;" class="img-responsive" src="https://i.pinimg.com/originals/c1/ec/da/c1ecda477bc92b6ecfc533b64d4a0337.png" alt="...">
+                        <div style="text-align: center;font-size: 1.6rem;color: #fff; FONT-WEIGHT: BOLD;">PLATA</div>
+                    </div>
+                    <div class="col-xs-6 col-sm-12 col-md-4">
+                        <img style="padding-bottom: 10px; margin-left: auto; margin-right: auto; width:100%;display: block;" class="img-responsive" src="https://i.pinimg.com/originals/c1/ec/da/c1ecda477bc92b6ecfc533b64d4a0337.png" alt="...">
+                        <div style="text-align: center;font-size: 1.6rem;color: #fff; FONT-WEIGHT: BOLD;">BRONCE</div>
+                    </div>
+                </div>
 
 
   </div>
