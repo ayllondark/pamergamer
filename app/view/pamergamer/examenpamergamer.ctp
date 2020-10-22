@@ -12,7 +12,7 @@
     <style>
 
     body{
-    background: url("../img/fondopamergamer.jpeg") no-repeat center center fixed!important;
+    background: url("../img/fondopamergamer.png") no-repeat center center fixed!important;
     background-size: cover!important;
     }
 
@@ -77,8 +77,8 @@
             <div id="cursoexamen" style="display:none;"></div>
             
         <div class="row" >
-       
-            <div class="col-xs-12 col-sm-12 col-md-9">
+            <div class="col-xs-12 col-sm-12 col-md-1"></div>
+            <div class="col-xs-12 col-sm-12 col-md-8">
                  
                  <div class="row" style="padding-bottom: 20px;">
                     <div class="col-xs-12 col-sm-12 col-md-4" style="padding-bottom: 10PX;">
@@ -107,7 +107,7 @@
                     </div>
                     </div>
                     
-                    <div class="col-xs-12 col-sm-12 col-md-3" style="padding-bottom: 10PX;">
+                    <div class="col-xs-12 col-sm-12 col-md-4" style="padding-bottom: 10PX;">
                         <div class="paralelogramo2" >
                             <div class="texto2">
                                <div class="row">
@@ -207,47 +207,42 @@
 
                     </div>
 
-
-                    
                     <div class="col-xs-12 col-sm-12 col-md-10" id="imagenpregunta" style="opacity: 0.9;border-radius: 1.3em;background: #104e7d; padding-bottom: 18PX;">
                         
                     </div>
-
-          <div class="row">
-            <div class="row" >
-                        <div class="col-xs-12 col-sm-12 col-md-3"></div>
-                        <div class="col-xs-12 col-sm-12 col-md-8" style="padding-top: 30PX; padding-bottom: 20PX;">
-                                <button type="button" class="btn btn-info btn-lg btn-block" style=" font-size: 25PX ; letter-spacing: 3PX;
-                                font-weight: bold;   BORDER-RADIUS: 1EM; background-color: #1bc5ef;
-                                 ">FINALIZAR RETO</button>
-                                
-                            </div>
-                        
-                        </div>
-          </div>
-
-                 
-
-
-
                 </div>  
-            
 
             </div>
             <div class="col-xs-12 col-sm-12 col-md-3">
                   
-                <div class="row" style=" text-align: center; padding-top: 100PX; padding-bottom: 10px; font-size: 44px;font-weight: bold;color: #fff373;letter-spacing: 5px;FONT-FAMILY: fangsong;">
-                    <span  >NIVEL</span>
+                <div class="row" style=" text-align: center; padding-top: 70PX; padding-bottom: 10px; font-size: 35px;font-weight: bold;color: #fff373;letter-spacing: 2px;">
+                    <span  >!FELICIDADES¡</span>
                 </div>
-                <div class="row" style="padding-top: 5px;">
-                            <img style=" margin-left: auto; margin-right: auto; width: 150px;display: block;" class="img-responsive" src="https://i.pinimg.com/originals/5b/61/67/5b6167f881cbf46ae638c759f033ed36.png" alt="...">
-                              <div style="text-align: center;font-size: 2.5em;color: #fff; FONT-WEIGHT: BOLD;">200</div>    
-                         </div> </BR>
                 <div class="row" style=" text-align: center; padding-bottom: 20px; padding-top:10px;color: #fff; font-weight: bold;font-size: 16px;letter-spacing: 2px;">
                     <span>SUPERASTE EL RETO PAMER</span>
                 </div>
 
-              
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-8">
+                        <div class="row" style=" text-align: center; padding-bottom: 10px; padding-top:10px;color: #fff; font-weight: bold;font-size: 16px;letter-spacing: 2px;">
+                            <span>OBTUVISTES 200 PTS</span>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-4">
+                        <div class="row" style=" text-align: center; padding-bottom: 10px; padding-top:10px;color: #fff; font-weight: bold;font-size: 16px;letter-spacing: 2px;">
+                            <span >1000/<span style="color:#8dcef4;">1500</span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="progress" style="background-color:#1a3d61;">
+                            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                              <span class="sr-only">20% Complete</span>
+                            </div>
+                        </div>
+                    </div>               
+                </div>
                 <div class="row" style="padding-bottom: 20px;">
                     <div class="col-xs-4 col-sm-4 col-md-4">
                           <div class="row" style="color: #87b3d4; font-weight: bold;font-size: 14px; text-align: right;">
@@ -298,7 +293,13 @@
                     </div>
                 </div>
 
-            
+                <div class="row" style="padding-top: 30PX;">
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <button type="button" id="btnGuardar" class="btn btn-info btn-lg btn-block" style=" font-size: 18PX;
+                        font-weight: bold;    BORDER-RADIUS: 1EM; background-color: #1bc5ef;
+                         padding-bottom: 13PX; ">JUGAR DE NUEVO</button>
+                    </div>
+                </div>
                  
                 <div class="row" style="padding-top: 15PX;">
                     <div class="col-xs-12 col-sm-12 col-md-12" style="text-align: center;">
@@ -321,15 +322,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
   
 </body>
-
-<script>
-    $(document).ready(function() {
-        $('.btn').click(function() {
-            $('.btn').removeClass('active').addClass('inactive');
-            $(this).removeClass('inactive').addClass('active');
-        });
-    })
-</script>
 
 
 </html>
