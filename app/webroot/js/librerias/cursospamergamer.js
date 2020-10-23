@@ -9,12 +9,40 @@ $(document).ready(function() {
 
 });
 
-/* end Audio */
+// Audio
+ctouch = new Audio('https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/Buttonclick.mp3');
+audioavatar = new Audio('../img/pamergamer/sounds/fondoperfil.mp3');
 
-/* function imgError(image) {
-    image.src = "images/default.png";
-    //$( this ).hide();
-} */
+audioavatar.volume = 0.1;
+// ## Create a function to play our sounds
+function playSound(sound) {
+    if (globals.audio) {
+
+        sound.play(); // Play sound
+    }
+}
+
+function playAudio(sound) {
+
+    sound.loop = false;
+    sound.volume = 0.7;
+    sound.play(); // Play sound
+
+}
+
+
+
+Swal.fire({
+    icon: 'info',
+    title: 'Bienvenido',
+    text: 'Presione OK para ver los cursos disponibles'
+
+});
+
+
+$('.swal2-confirm').click(function() {
+    playAudio(audioavatar);
+});
 
 
 function llenaGrados() {
@@ -66,7 +94,7 @@ function llenaGrados() {
 
 
 $(".nav-item").click(function() {
-
+    playAudio(ctouch);
     $("#cards").html('');
     //alert($(this).attr('data-semana'));
     var semana = $(this).attr('data-semana');
@@ -89,7 +117,7 @@ $(".nav-item").click(function() {
             if (datosOK == "OK") {
                 var datos = data.data;
                 //console.log(data.data);
-
+                var html = '';
                 $.each(datos, function(index, value) {
                     //$(".category").html(datos[index].cod); console.log(datos[index].cod);
                     var codcurso = datos[index].idcurso;
@@ -100,9 +128,7 @@ $(".nav-item").click(function() {
                     var puntajecurso = datos[index].jpuntaje;
 
 
-                    //$(".container").append('<div id="'+datos[index].id+'">'+prueba+'</div>');
-
-                    $("#cards").append('<div class="column" id="' + datos[index].id + '">' +
+                    html += '<div class="column" id="' + datos[index].id + '">' +
                         '<div class="post-module">' +
                         '<div class="thumbnail">' +
                         '<img src="../img/evaonline/' + imgcurso + '"/>' +
@@ -117,17 +143,19 @@ $(".nav-item").click(function() {
                         '<div class="barralec"><span style="width: ' + (puntosobtenidos / puntajecurso) * 100 + '%"></span>' +
                         '</div>' +
                         '<p class="text-center pordesa">Obtuviste el ' + (puntosobtenidos / puntajecurso) * 100 + '% del desafío</p>' +
-                        '</div>');
+                        '</div>';
 
 
 
 
                     //$('#cmbMotivo').append('<option value="' + datos[index].id + '">' + datos[index].motivo + '</option>');
                 });
+                $("#cards").html(html);
+
 
                 /* ------------------------------------------------------------ */
                 $(".entrar").click(function() {
-
+                    playAudio(ctouch);
                     //$("#cards").html('');
                     var ccurso = $(this).attr('data-cod');
                     //$("#codlectura").html(tipolectura);
@@ -138,8 +166,16 @@ $(".nav-item").click(function() {
                 });
 
             } else {
+
+                Swal.fire({
+                    icon: 'info',
+                    title: 'Oops...',
+                    text: data.data
+
+                })
+
                 viewMessage("divMessage", "Alerta", data.data, "danger", "ban");
-                $("#cards").append(data.data);
+                //$("#cards").append(data.data);
             }
 
         })
@@ -162,7 +198,7 @@ function llenaPerfil() {
     aParam = segenNegocios(aParam);
 
     var datosOK = "";
-    var strUrl = "getdatos/2";
+    var strUrl = "getdatos/7";
     $.post(strUrl, { "objJSON": aParam }, null, "html")
         .done(function(data, textStatus, jqXHR) {
             data = segdeNegocios(data);
@@ -183,13 +219,17 @@ function llenaPerfil() {
                     var avataralu = datos[index].imagen;
                     //<span style="width: 25%"></span>
                     $("#nivel").html('GRADO: <span style="color: #ffc107; font-size: 1.2em;">' + personaje + '</span>');
-                    $("#nick").html('NICK: <span style="color: #ffc107; font-size: 1.2em;">' + nick + '</span>');
+                    $("#nick").html(nick);
+                    $("#imgavatar").html('<img src="../img/pamergamer/avatars/' + avataralu + '" class="img-responsive" alt="Image">');
 
-                    $("#armadura").html('<img class="armadura" src="../app/webroot/assets_ace/images/lectogamer/avatars/' + avataralu + '" alt="">')
+                    $("#armadura").html('<img class="armadura" src="../app/webroot/img/pamergamer/avatars/' + avataralu + '" alt="">')
                     $("#nota").html('<img class="icoavatar" src="../app/webroot/img/pamergamer/escudo.svg" alt=""> ' + notaperfil);
 
                     $("#totmedallas").html('<img class="icoavatar" src="../app/webroot/img/pamergamer/escudo.svg" alt=""> ' + notaperfil / 100);
 
+                    $("#bronce").html((notaperfil / 500).toFixed());
+                    $("#plata").html((notaperfil / 1000).toFixed());
+                    $("#plata").html((notaperfil / 2000).toFixed());
                     //$('#cmbMotivo').append('<option value="' + datos[index].id + '">' + datos[index].motivo + '</option>');
                 });
 

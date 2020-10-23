@@ -20,7 +20,7 @@
 
 body {
   background: linear-gradient(to bottom, #8c7a7a 0%, #af877c 65%, #af877c 100%) fixed;
-  background: url("../img/fondopamergamer.png") no-repeat center center fixed!important;
+  background: url("https://i.pinimg.com/originals/fb/5b/48/fb5b48cd0d259376d6fcd35ab8404cbf.gif") no-repeat center center fixed!important;
   background-size: cover!important;
   font: 14px/20px "Lato", Arial, sans-serif;
   color: #9E9E9E;
@@ -188,10 +188,12 @@ body {
   outline: none;
   border: none;
   color: #222;
+  font-size: 16px;
+  FONT-WEIGHT: bold;
   transition: 0.3s linear;
 }
 ::placeholder{color: #999;}
-#nick input:focus {background: rgba(0, 0, 333, 0.10);}
+#nick input:focus {background: rgba(0, 0, 333, 0.10); color: #fff59e; font-size: 16px;    FONT-WEIGHT: bold;}
 
 #nick button {
   background-image: linear-gradient(to left, #1a598b 0%, #03A9F4 100%);

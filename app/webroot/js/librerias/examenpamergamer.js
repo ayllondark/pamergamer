@@ -13,10 +13,142 @@ $(document).ready(function() {
     var codcurso = getParameterByName('curid');
     $("#cursoexamen").html(codcurso);
 
+    llenaPerfil();
     ListaPreguntas();
+    ListaDatos();
+
 });
 
+/* start fecha examen */
+var meses = new Array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
+var diasSemana = new Array("Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado");
+var f = new Date();
 
+/* end fecha examen */
+
+
+function llenaPerfil() {
+
+    var aParam = '{}';
+
+    aParam = segenNegocios(aParam);
+
+    var datosOK = "";
+    var strUrl = "getdatos/7";
+    $.post(strUrl, { "objJSON": aParam }, null, "html")
+        .done(function(data, textStatus, jqXHR) {
+            data = segdeNegocios(data);
+
+            datosOK = data.message.toUpperCase();
+            console.log(datosOK);
+            if (datosOK == "OK") {
+                var datos = data.data;
+
+                $.each(datos, function(index, value) {
+                    var nick = datos[index].nick;
+                    var personaje = datos[index].personaje;
+                    var notaperfil = datos[index].notalec;
+                    var avataralu = datos[index].imagen;
+                    //<span style="width: 25%"></span>
+                    $("#nivel").html('GRADO: <span style="color: #ffc107; font-size: 1.2em;">' + personaje + '</span>');
+                    $("#nick").html(nick);
+                    $("#imgavatar").html('<img src="../img/pamergamer/avatars/' + avataralu + '" width="40px" height="40px" class="img-responsive" alt="Image">');
+                    $("#nomavatar").html(nick);
+                    $("#nota").html('<img class="icoavatar" src="../app/webroot/img/pamergamer/escudo.svg" alt=""> ' + notaperfil);
+
+                    $("#totmedallas").html('<img class="icoavatar" src="../app/webroot/img/pamergamer/escudo.svg" alt=""> ' + notaperfil / 100);
+
+                    $("#fechaac").html(diasSemana[f.getDay()] + ", " + f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear());
+
+
+                    //$('#cmbMotivo').append('<option value="' + datos[index].id + '">' + datos[index].motivo + '</option>');
+                });
+
+            } else {
+                viewMessage("divMessage", "Alerta", data.data, "danger", "ban");
+            }
+
+        })
+        .fail(function(jqXHR, textStatus, errorThrown) {
+            viewMessage("Mensaje", "Alerta", errorThrown + " " + jqXHR + " Error al leer encuesta", "warning", "warning");
+        })
+        .always(function() {
+            reLogin(datosOK);
+        });
+
+}
+
+function ListaDatos() {
+
+    var semana = $("#semanaexamen").html();
+    var codcurso = $("#cursoexamen").html();
+
+    var aParam = '{"semana":"' + $("#semanaexamen").html() + '","curso":"' + $("#cursoexamen").html() + '"}';
+
+    aParam = segenNegocios(aParam);
+
+    var datosOK = "";
+    var strUrl = "getdatos/3";
+    $.post(strUrl, { "objJSON": aParam }, null, "html")
+        .done(function(data, textStatus, jqXHR) {
+            data = segdeNegocios(data);
+
+            datosOK = data.message.toUpperCase();
+            console.log(datosOK);
+            if (datosOK == "OK") {
+                var datos = data.data;
+
+                $.each(datos, function(index, value) {
+                    var nropregunta = datos[index].id;
+                    $('#nropregunta').html(nropregunta);
+                    var puntos = datos[index].puntos;
+                    var puntotot = datos[index].punttot;
+                    var correctas = datos[index].correctas;
+                    var incorrectas = datos[index].incorrectas;
+                    var totpreguntas = datos[index].totalpreguntas;
+                    var nomcurso = (datos[index].nomcurso).toUpperCase();
+                    var nomgrado = (datos[index].grado).toUpperCase();
+                    var semana = (datos[index].semana);
+
+                    $('#pcorrectas').html(correctas);
+                    $('#pincorrectas').html(incorrectas);
+                    $('#totpreg').html(totpreguntas);
+                    $('#totpreg').html(totalpreguntas);
+                    $('#nomcurso').html(nomcurso);
+                    $('#nomgrado').html(nomgrado);
+                    $('#numsemana').html(semana);
+
+                    if (puntos == puntotot) {
+                        $('#paraimagen').html('<img width="40px" class="animate__animated animate__pulse animate__repeat-3" height="40px" src="../medallas/winner.svg" alt="">');
+                        $('#titmensa').html('!FELICIDADES¡');
+                        $('#subtitmensa').html('SUPERASTE EL RETO PAMER');
+                    } else {
+                        $('#paraimagen').html('<img width="30%" class="animate__animated animate__pulse animate__repeat-3" src="../img/pamergamer/medallas/winner.svg" alt="">');
+                        $('#titmensa').html('!SIGUE INTENTANDO!');
+                        $('#subtitmensa').html('NO TE RINDAS, SE QUE LA SIGUIENTE VEZ LO LOGRARAS ;)');
+                    }
+
+                    $('.barralec').html('<span style="width: ' + (puntos / puntotot) * 100 + '%"></span>' +
+                        '<p class="text-center pordesa">Obtuviste el ' + ((puntos / puntotot) * 100).toFixed() + '% del desafío</p>' +
+                        '</div>');
+
+                });
+
+            } else {
+                viewMessage("divMessage", "Alerta", data.data, "danger", "ban");
+                $("#cards").append(data.data);
+            }
+
+        })
+        .fail(function(jqXHR, textStatus, errorThrown) {
+            viewMessage("Mensaje", "Alerta", errorThrown + " " + jqXHR + " Error al leer encuesta", "warning", "warning");
+        })
+        .always(function() {
+            reLogin(datosOK);
+        });
+
+
+};
 
 
 function ListaPreguntas() {
@@ -48,7 +180,7 @@ function ListaPreguntas() {
 
                 //$('<script>alert("hi");</' + 'script>').appendTo(document.body);
 
-
+                var con = 0;
                 $.each(datos, function(index, value) {
                     //$(".category").html(datos[index].cod); console.log(datos[index].cod);
                     var nropregunta = datos[index].id;
@@ -60,35 +192,6 @@ function ListaPreguntas() {
                     var alternativa4 = datos[index].alterna4;
 
 
-
-                    /*  <div class="row">
-                              <img src="img/orlando.png" class=" img-responsive" alt="" style="padding: 20px;border-radius: 2em; width: 100%; height: 350PX;">
-                          </div>
-                            <div class="row" style=" padding-bottom: 10PX;">
-                              <div class="radio-toolbar">
-                                          <div class="col-xs-12 col-sm-12 col-md-2"></div>
-                                          <div class="col-xs-6 col-sm-6 col-md-2">                                     
-                                                  <input type="radio" id="A" name="radioFruit" value="apple" >
-                                                  <label for="A">A</label>
-                                          </div>
-                                          <div class="col-xs-6 col-sm-6 col-md-2">
-                                                 <input type="radio" id="B" name="radioFruit" value="banana">
-                                                  <label for="B">B</label>
-                                          </div>
-                                          <div class="col-xs-6 col-sm-6 col-md-2">
-                                                  <input type="radio" id="C" name="radioFruit" value="orange">
-                                                  <label for="C">C</label> 
-                                          </div>
-                                          <div class="col-xs-6 col-sm-6 col-md-2">
-                                                  <input type="radio" id="D" name="radioFruit" value="FF">
-                                                  <label for="D">D</label> 
-                                          </div>
-                                          <div class="col-xs-12 col-sm-12 col-md-2"></div>
-                                    </div>                        
-                            </div>*/
-
-
-
                     $("#imagenpregunta").append('<div class="row">' +
                         '<img src="../img/pamergamer/preguntas/' + pregunta + '" class=" img-responsive" alt="" style="padding: 20px;border-radius: 2em; width: 100%; height: 350PX;">' +
                         '</div>' +
@@ -96,19 +199,21 @@ function ListaPreguntas() {
                         '<div class="radio-toolbar">' +
                         '<div class="col-xs-12 col-sm-12 col-md-2"></div>' +
                         '<div class="col-xs-6 col-sm-6 col-md-2">' +
-                        '<input type="radio" name="color' + nropregunta + '" value="' + alternativa1 + '" /> <label style="padding-right: 35px;"> ' + alternativa1 + ' </label>' +
+                        '<input type="radio" id="' + con + '" name="color' + nropregunta + '" value="' + alternativa1 + '" /> <label for="' + con + '" style="padding-right: 35px;"> ' + alternativa1 + ' </label>' +
                         '</div>' +
                         '<div class="col-xs-6 col-sm-6 col-md-2">' +
-                        '<input type="radio" name="color' + nropregunta + '" value="' + alternativa2 + '" /> <label style="padding-right: 35px;"> ' + alternativa2 + ' </label>' +
+                        '<input type="radio" id="' + (con + 1) + '" name="color' + nropregunta + '" value="' + alternativa2 + '" /> <label for="' + (con + 1) + '" style="padding-right: 35px;"> ' + alternativa2 + ' </label>' +
                         '</div>' +
                         '<div class="col-xs-6 col-sm-6 col-md-2">' +
-                        '<input type="radio" name="color' + nropregunta + '" value="' + alternativa3 + '" /> <label style="padding-right: 35px;"> ' + alternativa3 + ' </label>' +
+                        '<input type="radio" id="' + (con + 2) + '" name="color' + nropregunta + '" value="' + alternativa3 + '" /> <label for="' + (con + 2) + '" style="padding-right: 35px;"> ' + alternativa3 + ' </label>' +
                         '</div>' +
                         '<div class="col-xs-6 col-sm-6 col-md-2">' +
-                        '<input type="radio" name="color' + nropregunta + '" value="' + alternativa4 + '" /> <label style="padding-right: 35px;"> ' + alternativa4 + ' </label>' +
+                        '<input type="radio" id="' + (con + 3) + '" name="color' + nropregunta + '" value="' + alternativa4 + '" /> <label for="' + (con + 3) + '" style="padding-right: 35px;"> ' + alternativa4 + ' </label>' +
                         '</div>' +
                         '</div>' +
                         '</div>');
+                    con = con * 2 + 4;
+                    con++;
 
                 });
 
@@ -159,57 +264,75 @@ $("#btnGuardar").click(function() {
     var rpta4 = $('input:radio[name=color4]:checked').val();
 
 
-    var rcurso = $("#cursoexamen").html();
-    var rsem = $("#semanaexamen").html();
+    if ($("input[name='color1']:radio").is(':checked') && $("input[name='color2']:radio").is(':checked') && $("input[name='color3']:radio").is(':checked') && $("input[name='color4']:radio").is(':checked')) {
+        // alert("Bien!!!, la edad seleccionada es: " + $('input:radio[name=edad]:checked').val());
 
 
-    var strUrl = "mantto/3";
-
-    // $("#cuadroreq").text();
-    var aParam = '{"curso":"' + $("#cursoexamen").html() + '","semana":"' + $("#semanaexamen").html() + '","preg1":"' + rpta1 + '","preg2":"' + rpta2 + '","preg3":"' + rpta3 + '","preg4":"' + rpta4 + '"}';
-    var datosOK = "";
-    console.log(aParam);
-    aParam = segenNegocios(aParam);
-
-    $.post(strUrl, { "objJSON": aParam }, null, "html")
-        .done(function(data, textStatus, jqXHR) {
-            data = segdeNegocios(data);
-            datosOK = data.message.toUpperCase();
-            // alert(datosOK);
-            if (datosOK = "OK") {
-
-                var datos = data.data;
 
 
-                $("#encuesta").html(data.data);
-                $(".titlea").hide();
-                //$("#divMessage").show();
-                $("#mensageg").show();
-                $('#mensageg').html('Datos Guardados Correctamente');
-                $('#formlectura').hide();
 
-                setTimeout(function() {
-                    $("#mensageg").fadeOut(400);
-                }, 6000);
+        var rcurso = $("#cursoexamen").html();
+        var rsem = $("#semanaexamen").html();
 
-                setTimeout("location.href='resultadospamergamer?sem=" + rsem + "&curid=" + rcurso + " '", 2000);
 
-                //$("#espaciador").show();
-                $("#txttitulo").val('');
-                $("#txtdescripcion").val('');
-                $("#txtpuntaje").val('');
+        var strUrl = "mantto/3";
 
-            } else {
-                $(".box-title").show();
-                $('#message').html('Error al Grabar los datos');
-            }
-        })
-        .fail(function(jqXHR, textStatus, errorThrown) {
-            viewMessage("Mensaje", "Alerta", errorThrown + " " + jqXHR + " Error al leer encuesta", "warning", "warning");
-        })
-        .always(function() {
-            reLogin(datosOK);
+        // $("#cuadroreq").text();
+        var aParam = '{"curso":"' + $("#cursoexamen").html() + '","semana":"' + $("#semanaexamen").html() + '","preg1":"' + rpta1 + '","preg2":"' + rpta2 + '","preg3":"' + rpta3 + '","preg4":"' + rpta4 + '"}';
+        var datosOK = "";
+        console.log(aParam);
+        aParam = segenNegocios(aParam);
+
+        $.post(strUrl, { "objJSON": aParam }, null, "html")
+            .done(function(data, textStatus, jqXHR) {
+                data = segdeNegocios(data);
+                datosOK = data.message.toUpperCase();
+                // alert(datosOK);
+                if (datosOK = "OK") {
+
+                    var datos = data.data;
+
+
+                    $("#encuesta").html(data.data);
+                    $(".titlea").hide();
+                    //$("#divMessage").show();
+                    $("#mensageg").show();
+                    $('#mensageg').html('Datos Guardados Correctamente');
+                    $('#formlectura').hide();
+
+                    setTimeout(function() {
+                        $("#mensageg").fadeOut(400);
+                    }, 6000);
+
+                    setTimeout("location.href='resultadospamergamer?sem=" + rsem + "&curid=" + rcurso + " '", 1000);
+
+                    //$("#espaciador").show();
+                    $("#txttitulo").val('');
+                    $("#txtdescripcion").val('');
+                    $("#txtpuntaje").val('');
+
+                } else {
+                    $(".box-title").show();
+                    $('#message').html('Error al Grabar los datos');
+                }
+            })
+            .fail(function(jqXHR, textStatus, errorThrown) {
+                viewMessage("Mensaje", "Alerta", errorThrown + " " + jqXHR + " Error al leer encuesta", "warning", "warning");
+            })
+            .always(function() {
+                reLogin(datosOK);
+            });
+
+
+
+    } else {
+        Swal.fire({
+            icon: 'info',
+            title: 'Advertencia',
+            text: 'Por favor, marque todas las opciones'
+
         });
+    }
 
 
 });

@@ -42,7 +42,7 @@ class PamergamerController extends AppController {
         $this->set('titPage', '');
         $this->set('subTitPage', 'Lectogamer Primaria '.date("Y"));
         $this->set('objJS', '<!-- Css -->');
-        $this->set('piePag', '<!-- Java -->'.'<script src="../js/librerias/cursospamergamer.js"></script>');
+        $this->set('piePag', '<!-- Java -->'.'<script src="../js/librerias/cursospamergamer.js?2"></script>');
 
     }
 
@@ -126,7 +126,7 @@ class PamergamerController extends AppController {
 
                         exit(AppController::getResult($sql));
 
-                    case 5:
+                    case 5: // Validar q tenga avatar para pasar defrente a cursos
                             $prejson = $this->request->data('objJSON');
                             $json = AppController::JSONisValid($prejson);
                             $sql = "CALL NPV_PAMERGAMER_REGISTRO_AVATAR('$usuario->codigo')";
@@ -135,15 +135,18 @@ class PamergamerController extends AppController {
 
 
                     case 6:
-
                         $prejson = $this->request->data('objJSON');
-
                         $json = AppController::JSONisValid($prejson);
-
                         $sql = "CALL NPV_PAMERGAMER_MOSTRAR_GRADOS('$usuario->codigo')";
-
                         exit(AppController::getResult($sql));
+                        break;
 
+                    case 7: // muestra los datos del avatar del usuario
+                            $prejson = $this->request->data('objJSON');
+                            $json = AppController::JSONisValid($prejson);
+                            $sql = "CALL NPV_PAMERGAMER_PERFIL('$usuario->codigo')";
+                            exit(AppController::getResult($sql));
+                            break;
 
 		    
 

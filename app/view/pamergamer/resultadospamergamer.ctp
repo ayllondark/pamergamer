@@ -8,11 +8,15 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
     
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
 
     <style>
 
     body{
-    background: url("../img/fondopamergamer.jpeg") no-repeat center center fixed!important;
+    background: url("../img/fondopamergamer.png") no-repeat center center fixed!important;
     background-size: cover!important;
     }
 
@@ -125,13 +129,38 @@ color: #fff;
 
 /* Fin Barra de Progreso de Cards */
 
+@media (min-width: 992px){
+.col-md-12 {
+    width: 100%;
+    text-align: center;
+}
+}
+
+.swal2-popup{
+    display: flex;
+    width: 50%;
+    height: 50%;
+}
+
+#confetti{
+    position: absolute;
+    z-index: 1;
+}
+
+canvas {
+      width: 100%;
+      height: 100vh;
+    }
+
+    
     </style>
 </head>
 
 <body>
 
 
-<audio id="myAudio" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/retrogameloop.mp3"></audio>
+<canvas id="confetti"></canvas>
+
 
 
 
@@ -139,31 +168,28 @@ color: #fff;
 <div id="cursoexamen" style="display:none;"></div>
 
 <div class="container-fluid" style="margin-top: 1%;" >
-          
 
-           <div id="semanaexamen" style="display:none;"></div>
-            <div id="cursoexamen" style="display:none;"></div>
 
 
             <div class="row">
                
             <div class="col-xs-12 col-sm-12 col-md-2"></div>
-            <div class="col-xs-12 col-sm-12 col-md-8" style="padding: 40px; background-color: #1bc5ef; opacity: 0.7; border-radius: 1em;">
+            <div class="col-xs-12 col-sm-12 col-md-8" style="padding: 40px; background-color: #19b5db; border-radius: 1em;">
 
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-6">
                             <div class="paralelogramo2" >
                                     <div class="texto2">
                                     <div class="row">
-                                    <div class=" col-xs-3 col-sm-3 col-md-3">
-                                                        <img width="40px" height="40px" src="https://www.asomumevir.org/wp-content/uploads/2018/12/student.png" alt="">
+                                    <div class=" col-xs-3 col-sm-3 col-md-3" id="imgavatar">
+                                                        
                                                     </div>
                                                     <div class=" col-xs-4 col-sm-4 col-md-5" style="text-align: left;">
                                                             <div class="row" style="font-size: 1.5rem;  color: #fff;       font-weight: 600;">
                                                                 NICKNAME
                                                             </div>
-                                                            <div class="row" style="margin-bottom: 0.4rem; color: #f5f5f5; font-size: 1.2rem; ">
-                                                                4° SEC.
+                                                            <div class="row" id="nick" style="margin-bottom: 0.4rem; color: #f5f5f5; font-size: 1.2rem; ">
+                                                                
                                                             </div>
                                                     </div>
                                             <div class=" col-xs-4 col-sm-4 col-md-3">
@@ -185,10 +211,10 @@ color: #fff;
                                     <div class=" col-xs-7 col-sm-7 col-md-2"></div>
                                             <div class=" col-xs-7 col-sm-7 col-md-5" style="text-align: left;">
                                                     <div class="row" style=" color: #f5f5f5; font-size: 1.2rem; ">
-                                                        TIEMPO
+                                                        TOTAL MEDALLAS
                                                     </div>
-                                                    <div class="row" style="font-size: 2rem;  color: #fff;  color: #f1e25f;;       font-weight: 600;">
-                                                        16:26
+                                                    <div class="row" id="fechaac" style="font-size: 1.1rem;  color: #fff;  color: #f1e25f;;       font-weight: 600;">
+                                                       ?
                                                     </div>
                                             </div>
                                             <div class=" col-xs-4 col-sm-4 col-md-4">
@@ -281,7 +307,7 @@ color: #fff;
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-6">
                         <div class="row" style=" text-align: center; padding-bottom: 10px; padding-top:10px;color: #fff; font-weight: bold;font-size: 16px;letter-spacing: 2px;">
-                            <span><strong id="puntaje"> </strong> / <span id="puntajetot" style="color:#444;"></span></span>
+                            <span><strong id="puntaje2"> </strong> / <span id="puntajetot" style="color:#444;"></span></span>
                         </div>
                     </div>
 
@@ -336,15 +362,15 @@ color: #fff;
            <div class="row">
                
                     <div class="col-xs-6 col-sm-12 col-md-4">
-                        <img style=" margin-left: auto; margin-right: auto; width: 120px;display: block;" class="img-responsive" src="https://i.pinimg.com/originals/c1/ec/da/c1ecda477bc92b6ecfc533b64d4a0337.png" alt="...">
+                        <img style=" margin-left: auto; margin-right: auto; width: 120px;display: block;" class="img-responsive" src="../img/pamergamer/medallas/oro.png" alt="...">
                         <div style="text-align: center;font-size: 1.4rem;color: #fff; FONT-WEIGHT: BOLD;">ORO</div>
                     </div>
                     <div class="col-xs-6 col-sm-12 col-md-4">
-                        <img style=" margin-left: auto; margin-right: auto; width: 120px;display: block;" class="img-responsive" src="https://i.pinimg.com/originals/c1/ec/da/c1ecda477bc92b6ecfc533b64d4a0337.png" alt="...">
+                        <img style=" margin-left: auto; margin-right: auto; width: 120px;display: block;" class="img-responsive" src="../img/pamergamer/medallas/plata.png" alt="...">
                         <div style="text-align: center;font-size: 1.4rem;color: #fff; FONT-WEIGHT: BOLD;">PLATA</div>
                     </div>
                     <div class="col-xs-6 col-sm-12 col-md-4">
-                        <img style=" margin-left: auto; margin-right: auto; width: 120px;display: block;" class="img-responsive" src="https://i.pinimg.com/originals/c1/ec/da/c1ecda477bc92b6ecfc533b64d4a0337.png" alt="...">
+                        <img style=" margin-left: auto; margin-right: auto; width: 120px;display: block;" class="img-responsive" src="../img/pamergamer/medallas/bronce.png" alt="...">
                         <div style="text-align: center;font-size: 1.4rem;color: #fff; FONT-WEIGHT: BOLD;">BRONCE</div>
                     </div>
                 </div>
@@ -353,7 +379,7 @@ color: #fff;
                 <div class="row" style="padding-top: 30PX;">
                    <div class="col-xs-12 col-sm-12 col-md-3"></div>
                     <div class="col-xs-12 col-sm-12 col-md-6">
-                        <button type="button" id="btnGuardar2" class="btn btn-primary btn-lg btn-block" style=" font-size: 18PX;
+                        <button type="button" id="btnRegresar" class="btn btn-primary btn-lg btn-block" style=" font-size: 18PX;
                         font-weight: bold;    BORDER-RADIUS: 1EM; background-color: #337ab7;
                          padding-bottom: 13PX; ">VER CURSOS</button>
                     </div>
@@ -371,6 +397,13 @@ color: #fff;
 
             
            
+
+
+           <!-- start modal  -->
+
+           <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+           <!-- end modal -->
 
                     
 

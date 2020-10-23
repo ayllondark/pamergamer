@@ -36,18 +36,22 @@ function ListaAvatar2() {
                 var datos = data.data;
 
 
+                var html3 = '';
                 $.each(datos, function(index, value) {
                     //$(".category").html(datos[index].cod); console.log(datos[index].cod);
                     var idpersonaje = datos[index].id;
                     var imagen = datos[index].imagen;
 
-                    $(".gallery").append('<li class="btnavatar" id="' + idpersonaje + '" style="position: relative; float: left; width: 130px; height: 130px; margin: 5px; padding: 5px; z-index: 0;">' +
-                        '<img style="border-radius: 1em; background-color: #363f46; width: 130px; height: 130px; padding: 5px; position: absolute; left: 0; top: 0;" src="../app/webroot/img/pamergamer/avatars/' + imagen + '">' +
-                        '</li>');
+                    html3 += '<li class="btnavatar" id="' + idpersonaje + '" style="position: relative; float: left; width: 130px; height: 130px; margin: 5px; padding: 5px; z-index: 0;">' +
+                        '<img style="border-radius: 1em; opacity:0.9; background-color: #3c8dbc; width: 130px; height: 130px; padding: 5px; position: absolute; left: 0; top: 0;" src="../app/webroot/img/pamergamer/avatars/' + imagen + '">' +
+                        '</li>';
 
 
 
                 });
+
+                $(".gallery").html(html3);
+
                 fChargeData();
 
                 $(".btnavatar").click(function() {
