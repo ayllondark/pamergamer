@@ -117,7 +117,11 @@ $(".nav-item").click(function() {
             if (datosOK == "OK") {
                 var datos = data.data;
                 //console.log(data.data);
+<<<<<<< HEAD
                 var html = '';
+=======
+               var html='';
+>>>>>>> dcadef4c36c0f7ca2734f9ab726685ece395be30
                 $.each(datos, function(index, value) {
                     //$(".category").html(datos[index].cod); console.log(datos[index].cod);
                     var codcurso = datos[index].idcurso;
@@ -128,7 +132,13 @@ $(".nav-item").click(function() {
                     var puntajecurso = datos[index].jpuntaje;
 
 
+<<<<<<< HEAD
                     html += '<div class="column" id="' + datos[index].id + '">' +
+=======
+                    //$(".container").append('<div id="'+datos[index].id+'">'+prueba+'</div>');
+  
+                    html+= '<div class="column" id="' + datos[index].id + '">' +
+>>>>>>> dcadef4c36c0f7ca2734f9ab726685ece395be30
                         '<div class="post-module">' +
                         '<div class="thumbnail">' +
                         '<img src="../img/evaonline/' + imgcurso + '"/>' +
@@ -171,8 +181,13 @@ $(".nav-item").click(function() {
                     icon: 'info',
                     title: 'Oops...',
                     text: data.data
+<<<<<<< HEAD
 
                 })
+=======
+                    
+                  })
+>>>>>>> dcadef4c36c0f7ca2734f9ab726685ece395be30
 
                 viewMessage("divMessage", "Alerta", data.data, "danger", "ban");
                 //$("#cards").append(data.data);

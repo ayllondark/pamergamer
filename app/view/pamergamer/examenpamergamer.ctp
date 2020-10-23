@@ -12,7 +12,7 @@
     <style>
 
     body{
-    background: url("../img/fondopamergamer.png") no-repeat center center fixed!important;
+    background: url("../img/fondopamergamer.jpeg") no-repeat center center fixed!important;
     background-size: cover!important;
     }
 
@@ -220,6 +220,7 @@
                <div class="row">
                    <div class="col-xs-12 col-sm-12 col-md-4"></div>
                    <div class="col-xs-12 col-sm-12 col-md-5">
+<<<<<<< HEAD
 
                    <div class="row" style="padding-top: 30PX; padding-bottom: 20px;">
                     <div class="col-xs-12 col-sm-12 col-md-12">
@@ -229,14 +230,30 @@
                     </div>
                 </div>
 
+=======
+
+                   <div class="row" style="padding-top: 30PX; padding-bottom: 20px;">
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <button type="button" id="btnGuardar" class="btn btn-info btn-lg btn-block" style=" font-size: 22PX;letter-spacing: 2px;
+                        font-weight: bold;    BORDER-RADIUS: 0.8EM; background-color: #337ab7;;
+                         padding-bottom: 13PX; ">FINALIZAR JUEGO</button>
+                    </div>
+                </div>
+
+>>>>>>> dcadef4c36c0f7ca2734f9ab726685ece395be30
                    </div>
                </div>
             
             </div>
             <div class="col-xs-12 col-sm-12 col-md-3">
                   
+<<<<<<< HEAD
                 <div class="row" style=" text-align: center; padding-top: 100PX; padding-bottom: 10px; font-size: 30px;font-weight: bold;color: #fff373;letter-spacing: 5px;">
                     <span  >ÚLTIMO RESULTADO</span>
+=======
+                <div class="row" style=" text-align: center; padding-top: 100PX; padding-bottom: 10px; font-size: 45px;font-weight: bold;color: #fff373;letter-spacing: 5px;">
+                    <span  >NIVEL</span>
+>>>>>>> dcadef4c36c0f7ca2734f9ab726685ece395be30
                 </div>
                 <div class="row" style=" text-align: center; padding-bottom: 20px; padding-top:10px;color: #fff; font-weight: bold;font-size: 16px;letter-spacing: 2px;">
                     <span></span>
@@ -245,6 +262,10 @@
                <div class="row">
                <div class="col-xs-12 col-sm-12 col-md-12">
                  <img style=" margin-left: auto; margin-right: auto; width: 150px;display: block;" class="img-responsive" src="https://www.libreriareleer.es/img/logo-libro.png" alt="..."> 
+<<<<<<< HEAD
+=======
+                 <div style="text-align: center;font-size: 1.4rem;color: #fff; FONT-WEIGHT: BOLD; padding-bottom: 20px;padding-top: 20px;">LIBROS</div>
+>>>>>>> dcadef4c36c0f7ca2734f9ab726685ece395be30
                 </div>
 
 
@@ -259,8 +280,13 @@
                           </div>
                     </div>
                     <div class="col-xs-4 col-sm-4 col-md-3">
+<<<<<<< HEAD
                         <div class="row" id="totalpreguntas" style="color: #fff373; font-weight: bold;font-size: 35px; text-align: center;">
                             0
+=======
+                        <div class="row" style="color: #fff373; font-weight: bold;font-size: 35px; text-align: center;">
+                            10
+>>>>>>> dcadef4c36c0f7ca2734f9ab726685ece395be30
                         </div>
                     </div>
                     <div class="col-xs-4 col-sm-4 col-md-5">
@@ -281,6 +307,7 @@
                 <div class="row">
                  
                     <div class="col-xs-6 col-sm-12 col-md-4">
+<<<<<<< HEAD
                         <img style=" margin-left: auto; margin-right: auto; width: 100px;display: block;" class="img-responsive" src="../img/pamergamer/medallas/oro.png" alt="...">
                         <div style="text-align: center;font-size: 1.4rem;color: #fff; FONT-WEIGHT: BOLD;">ORO</div>
                     </div>
@@ -290,6 +317,17 @@
                     </div>
                     <div class="col-xs-6 col-sm-12 col-md-4">
                         <img style=" margin-left: auto; margin-right: auto; width: 100px;display: block;" class="img-responsive" src="../img/pamergamer/medallas/bronce.png" alt="...">
+=======
+                        <img style=" margin-left: auto; margin-right: auto; width: 100px;display: block;" class="img-responsive" src="https://i.pinimg.com/originals/c1/ec/da/c1ecda477bc92b6ecfc533b64d4a0337.png" alt="...">
+                        <div style="text-align: center;font-size: 1.4rem;color: #fff; FONT-WEIGHT: BOLD;">ORO</div>
+                    </div>
+                    <div class="col-xs-6 col-sm-12 col-md-4">
+                        <img style=" margin-left: auto; margin-right: auto; width: 100px;display: block;" class="img-responsive" src="https://i.pinimg.com/originals/c1/ec/da/c1ecda477bc92b6ecfc533b64d4a0337.png" alt="...">
+                        <div style="text-align: center;font-size: 1.4rem;color: #fff; FONT-WEIGHT: BOLD;">PLATA</div>
+                    </div>
+                    <div class="col-xs-6 col-sm-12 col-md-4">
+                        <img style=" margin-left: auto; margin-right: auto; width: 100px;display: block;" class="img-responsive" src="https://i.pinimg.com/originals/c1/ec/da/c1ecda477bc92b6ecfc533b64d4a0337.png" alt="...">
+>>>>>>> dcadef4c36c0f7ca2734f9ab726685ece395be30
                         <div style="text-align: center;font-size: 1.4rem;color: #fff; FONT-WEIGHT: BOLD;">BRONCE</div>
                     </div>
                 </div>

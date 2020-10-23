@@ -180,7 +180,11 @@ function ListaPreguntas() {
 
                 //$('<script>alert("hi");</' + 'script>').appendTo(document.body);
 
+<<<<<<< HEAD
                 var con = 0;
+=======
+            var con= 0;
+>>>>>>> dcadef4c36c0f7ca2734f9ab726685ece395be30
                 $.each(datos, function(index, value) {
                     //$(".category").html(datos[index].cod); console.log(datos[index].cod);
                     var nropregunta = datos[index].id;
@@ -193,12 +197,13 @@ function ListaPreguntas() {
 
 
                     $("#imagenpregunta").append('<div class="row">' +
-                        '<img src="../img/pamergamer/preguntas/' + pregunta + '" class=" img-responsive" alt="" style="padding: 20px;border-radius: 2em; width: 100%; height: 350PX;">' +
+                 '<img src="../img/pamergamer/preguntas/' + pregunta + '" class=" img-responsive" alt="" style="padding: 20px;border-radius: 2em; width: 100%; height: 350PX;">' +
                         '</div>' +
                         '<div class="row" style=" padding-bottom: 10PX;">' +
                         '<div class="radio-toolbar">' +
                         '<div class="col-xs-12 col-sm-12 col-md-2"></div>' +
                         '<div class="col-xs-6 col-sm-6 col-md-2">' +
+<<<<<<< HEAD
                         '<input type="radio" id="' + con + '" name="color' + nropregunta + '" value="' + alternativa1 + '" /> <label for="' + con + '" style="padding-right: 35px;"> ' + alternativa1 + ' </label>' +
                         '</div>' +
                         '<div class="col-xs-6 col-sm-6 col-md-2">' +
@@ -214,8 +219,25 @@ function ListaPreguntas() {
                         '</div>');
                     con = con * 2 + 4;
                     con++;
+=======
+                        '<input type="radio" id="'+con+'" name="color' + nropregunta + '" value="' + alternativa1 + '" /> <label for="'+con+'" style="padding-right: 35px;"> ' + alternativa1 + ' </label>' +
+                        '</div>' +
+                        '<div class="col-xs-6 col-sm-6 col-md-2">' +
+                        '<input type="radio" id="'+(con+1)+'" name="color' + nropregunta + '" value="' + alternativa2 + '" /> <label for="'+(con+1)+'" style="padding-right: 35px;"> ' + alternativa2 + ' </label>' +
+                        '</div>' +
+                        '<div class="col-xs-6 col-sm-6 col-md-2">' +
+                        '<input type="radio" id="'+(con+2)+'" name="color' + nropregunta + '" value="' + alternativa3 + '" /> <label for="'+(con+2)+'" style="padding-right: 35px;"> ' + alternativa3 + ' </label>' +
+                        '</div>' +
+                        '<div class="col-xs-6 col-sm-6 col-md-2">' +
+                        '<input type="radio" id="'+(con+3)+'" name="color' + nropregunta + '" value="' + alternativa4 + '" /> <label for="'+(con+3)+'" style="padding-right: 35px;"> ' + alternativa4 + ' </label>' +
+                        '</div>' +
+                        '</div>' +
+                        '</div>');
+                            con =  con*2+4;
+                        con++;
+>>>>>>> dcadef4c36c0f7ca2734f9ab726685ece395be30
 
-                });
+            });
 
                 $(".btnavatar").click(function() {
                     var suid = this.id;

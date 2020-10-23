@@ -23,7 +23,11 @@
   background: linear-gradient(to bottom, #8c7a7a 0%, #af877c 65%, #af877c 100%) fixed;
 
  /* background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/coc-background.jpg") no-repeat center center fixed!important; */
+<<<<<<< HEAD
 background: url("https://i.pinimg.com/originals/06/a8/5b/06a85b703ccc50fcc2214bac56214f48.gif") no-repeat center center fixed!important;
+=======
+background: url("../img/fondopamergamer.jpeg") no-repeat center center fixed!important;
+>>>>>>> dcadef4c36c0f7ca2734f9ab726685ece395be30
 
   background-size: cover!important;
 
@@ -5586,8 +5590,13 @@ img[src='../app/webroot/assets_ace/images/lectogamer/lecturas/undefined'] { disp
                                             <div class="row" style="font-size: 2rem;  color: #fff;       font-weight: 600;">
                                                 NICKNAME
                                             </div>
+<<<<<<< HEAD
                                             <div class="row" id="nick" style="margin-bottom: 0.4rem; color: #f5f5f5; font-size: 1.2rem; ">
                                                 
+=======
+                                            <div class="row" style="margin-bottom: 0.4rem; color: #f5f5f5; font-size: 1.2rem; ">
+                                                4° SEC.
+>>>>>>> dcadef4c36c0f7ca2734f9ab726685ece395be30
                                             </div>
                                       </div>
                                       <div class=" col-xs-4 col-sm-4 col-md-4">
@@ -5609,14 +5618,20 @@ img[src='../app/webroot/assets_ace/images/lectogamer/lecturas/undefined'] { disp
 
      
 
+<<<<<<< HEAD
       <div id="imgavatar" >
       
       </div>
+=======
+      
+      <img src="../img/pamergamer/avatars/avatar008.png" class="img-responsive" alt="Image">
+>>>>>>> dcadef4c36c0f7ca2734f9ab726685ece395be30
       
       <div class="row" style=" padding-top: 33px; padding-bottom: 33px;background-color: #104e7d;border-radius: 1em;
     font-family: sans-serif;margin-top: 33px;opacity: 0.9;">
                
                     <div class="col-xs-6 col-sm-12 col-md-4">
+<<<<<<< HEAD
                         <img style="padding-bottom: 10px; margin-left: auto; margin-right: auto; width: 100%;display: block;" class="img-responsive" src="../img/pamergamer/medallas/oro.png" alt="...">
                         <div style="text-align: center;font-size: 1.6rem;color: #fff; FONT-WEIGHT: BOLD;">ORO</div>
                         <div id="oro" style="text-align: center;font-size: 1.6rem;color: #fff; FONT-WEIGHT: BOLD;">0</div>
@@ -5630,6 +5645,18 @@ img[src='../app/webroot/assets_ace/images/lectogamer/lecturas/undefined'] { disp
                         <img style="padding-bottom: 10px; margin-left: auto; margin-right: auto; width:100%;display: block;" class="img-responsive" src="../img/pamergamer/medallas/bronce.png" alt="...">
                         <div style="text-align: center;font-size: 1.6rem;color: #fff; FONT-WEIGHT: BOLD;">BRONCE</div>
                         <div id="bronce" style="text-align: center;font-size: 1.6rem;color: #fff; FONT-WEIGHT: BOLD;">0</div>
+=======
+                        <img style="padding-bottom: 10px; margin-left: auto; margin-right: auto; width: 100%;display: block;" class="img-responsive" src="https://i.pinimg.com/originals/c1/ec/da/c1ecda477bc92b6ecfc533b64d4a0337.png" alt="...">
+                        <div style="text-align: center;font-size: 1.6rem;color: #fff; FONT-WEIGHT: BOLD;">ORO</div>
+                    </div>
+                    <div class="col-xs-6 col-sm-12 col-md-4">
+                        <img style="padding-bottom: 10px; margin-left: auto; margin-right: auto; width: 100%;display: block;" class="img-responsive" src="https://i.pinimg.com/originals/c1/ec/da/c1ecda477bc92b6ecfc533b64d4a0337.png" alt="...">
+                        <div style="text-align: center;font-size: 1.6rem;color: #fff; FONT-WEIGHT: BOLD;">PLATA</div>
+                    </div>
+                    <div class="col-xs-6 col-sm-12 col-md-4">
+                        <img style="padding-bottom: 10px; margin-left: auto; margin-right: auto; width:100%;display: block;" class="img-responsive" src="https://i.pinimg.com/originals/c1/ec/da/c1ecda477bc92b6ecfc533b64d4a0337.png" alt="...">
+                        <div style="text-align: center;font-size: 1.6rem;color: #fff; FONT-WEIGHT: BOLD;">BRONCE</div>
+>>>>>>> dcadef4c36c0f7ca2734f9ab726685ece395be30
                     </div>
                 </div>
 
