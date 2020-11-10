@@ -23,11 +23,7 @@
   background: linear-gradient(to bottom, #8c7a7a 0%, #af877c 65%, #af877c 100%) fixed;
 
  /* background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/coc-background.jpg") no-repeat center center fixed!important; */
-<<<<<<< HEAD
-background: url("https://i.pinimg.com/originals/06/a8/5b/06a85b703ccc50fcc2214bac56214f48.gif") no-repeat center center fixed!important;
-=======
 background: url("../img/fondopamergamer.jpeg") no-repeat center center fixed!important;
->>>>>>> dcadef4c36c0f7ca2734f9ab726685ece395be30
 
   background-size: cover!important;
 
