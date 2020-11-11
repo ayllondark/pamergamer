@@ -29,9 +29,9 @@
      <div class="container">
          
         
-        <div class="row" style="padding-top: 10px;">
+        <div class="row" >
                 <div class="col-md-3"></div>
-                <div class="col-md-6" style="text-align: center; font-size: 20px; padding: 20px;">
+                <div class="col-md-6" style="text-align: center; font-size: 15px; padding: 15px;">
                 Test de Inteligencia Múltiple
                 </div>
                 <div class="col-md-3"></div>
@@ -39,7 +39,7 @@
         
         <div class="row">
                 <div class="col-md-3"></div>
-                <div class="col-md-6" style="text-align: center; font-size: 25px; padding: 20px;">
+                <div class="col-md-6" style="text-align: center; font-size: 20px; padding: 15px;">
                 Inteligencia Lingüística
                 </div>
                 <div class="col-md-3"></div>
@@ -116,7 +116,26 @@
                 </div>
                 <div class="col-md-3"></div>
         </div>
+        <div class="row" style="padding-top: 20px; padding-bottom: 20px; ">
+                <div class="col-md-3"></div>
+              
+                <div class="col-md-3">
+                        <div class="row">
+                            <div class="col-md-3"><img width="100%" src="https://image.flaticon.com/icons/png/128/3588/3588230.png" class="img-responsive"> </div>
+                            <div class="col-md-9" style="margin-top: 13px;">Regresar</div>
+                        </div>
 
+                </div>
+               
+                <div class="col-md-3" >
+                        <div class="row">
+                          <div class="col-md-3"></div>
+                            <div class="col-md-3"><img width="100%" src="https://pngimage.net/wp-content/uploads/2018/05/cetak-png-6.png" class="img-responsive"> </div>
+                            <div class="col-md-6" style="margin-top: 13px;">Imprimir infografía</div>
+                        </div>
+                </div>
+                <div class="col-md-3"></div>
+        </div>
      </div>
 
 
